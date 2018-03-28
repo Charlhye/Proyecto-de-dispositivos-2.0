@@ -19,7 +19,7 @@ import UIKit
 class TableViewController1: UITableViewController {
     
     //paso 8: agregar la direccion de donde se recuperan los datos en linea
-    let direccion="http://199.233.252.86/datos/datos.json"
+    let direccion="http://199.233.252.86/201811/theway2/labsCDETEClleno.json"
     
     //paso 2: declarar una variable para contener los nuevos datos
     var nuevoArray:[Any]?
@@ -82,7 +82,7 @@ class TableViewController1: UITableViewController {
                 style: UITableViewCellStyle.default, reuseIdentifier: "zelda")
         }
         let objetoMarca = nuevoArray![indexPath.row] as! [String: Any]
-        let s:String = objetoMarca["marca"] as! String
+        let s:String = objetoMarca["nombre"] as! String
         cell.textLabel?.text=s
         return cell
         
