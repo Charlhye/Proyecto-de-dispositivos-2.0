@@ -12,6 +12,10 @@
 		F2B6DF04206AF97F00D3E8E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF02206AF97F00D3E8E8 /* Main.storyboard */; };
 		F2B6DF06206AF97F00D3E8E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF05206AF97F00D3E8E8 /* Assets.xcassets */; };
 		F2B6DF09206AF97F00D3E8E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF07206AF97F00D3E8E8 /* LaunchScreen.storyboard */; };
+		F2B6DF11206B078C00D3E8E8 /* cedetec.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF10206B078B00D3E8E8 /* cedetec.jpg */; };
+		F2B6DF33206B1ABB00D3E8E8 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF32206B1ABA00D3E8E8 /* art.scnassets */; };
+		F2B6DF35206B1AF000D3E8E8 /* ViewControllerAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6DF34206B1AF000D3E8E8 /* ViewControllerAR.swift */; };
+		F2B6DF37206B28ED00D3E8E8 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6DF36206B28ED00D3E8E8 /* ViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		F2B6DF05206AF97F00D3E8E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2B6DF08206AF97F00D3E8E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2B6DF0A206AF97F00D3E8E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2B6DF10206B078B00D3E8E8 /* cedetec.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cedetec.jpg; path = Images/cedetec.jpg; sourceTree = "<group>"; };
+		F2B6DF32206B1ABA00D3E8E8 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		F2B6DF34206B1AF000D3E8E8 /* ViewControllerAR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerAR.swift; sourceTree = "<group>"; };
+		F2B6DF36206B28ED00D3E8E8 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +62,16 @@
 		F2B6DEFD206AF97F00D3E8E8 /* Proyecto de dispositivos 2,0 */ = {
 			isa = PBXGroup;
 			children = (
+				F2B6DF32206B1ABA00D3E8E8 /* art.scnassets */,
+				F2B6DF10206B078B00D3E8E8 /* cedetec.jpg */,
 				F2B6DEFE206AF97F00D3E8E8 /* AppDelegate.swift */,
 				F2B6DF00206AF97F00D3E8E8 /* ViewController.swift */,
+				F2B6DF34206B1AF000D3E8E8 /* ViewControllerAR.swift */,
 				F2B6DF02206AF97F00D3E8E8 /* Main.storyboard */,
 				F2B6DF05206AF97F00D3E8E8 /* Assets.xcassets */,
 				F2B6DF07206AF97F00D3E8E8 /* LaunchScreen.storyboard */,
 				F2B6DF0A206AF97F00D3E8E8 /* Info.plist */,
+				F2B6DF36206B28ED00D3E8E8 /* ViewController2.swift */,
 			);
 			path = "Proyecto de dispositivos 2,0";
 			sourceTree = "<group>";
@@ -125,7 +137,9 @@
 			files = (
 				F2B6DF09206AF97F00D3E8E8 /* LaunchScreen.storyboard in Resources */,
 				F2B6DF06206AF97F00D3E8E8 /* Assets.xcassets in Resources */,
+				F2B6DF33206B1ABB00D3E8E8 /* art.scnassets in Resources */,
 				F2B6DF04206AF97F00D3E8E8 /* Main.storyboard in Resources */,
+				F2B6DF11206B078C00D3E8E8 /* cedetec.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2B6DF35206B1AF000D3E8E8 /* ViewControllerAR.swift in Sources */,
+				F2B6DF37206B28ED00D3E8E8 /* ViewController2.swift in Sources */,
 				F2B6DF01206AF97F00D3E8E8 /* ViewController.swift in Sources */,
 				F2B6DEFF206AF97F00D3E8E8 /* AppDelegate.swift in Sources */,
 			);
