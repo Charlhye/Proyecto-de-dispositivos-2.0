@@ -16,6 +16,7 @@
 		F2B6DF33206B1ABB00D3E8E8 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF32206B1ABA00D3E8E8 /* art.scnassets */; };
 		F2B6DF35206B1AF000D3E8E8 /* ViewControllerAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6DF34206B1AF000D3E8E8 /* ViewControllerAR.swift */; };
 		F2B6DF37206B28ED00D3E8E8 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6DF36206B28ED00D3E8E8 /* ViewController2.swift */; };
+		F2B6DF57206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF56206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F2B6DF32206B1ABA00D3E8E8 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		F2B6DF34206B1AF000D3E8E8 /* ViewControllerAR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerAR.swift; sourceTree = "<group>"; };
 		F2B6DF36206B28ED00D3E8E8 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		F2B6DF56206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "tec-de-monterrey-becas-para-mexicanos.jpg"; path = "Images/tec-de-monterrey-becas-para-mexicanos.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		F2B6DEFD206AF97F00D3E8E8 /* Proyecto de dispositivos 2,0 */ = {
 			isa = PBXGroup;
 			children = (
+				F2B6DF56206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg */,
 				F2B6DF32206B1ABA00D3E8E8 /* art.scnassets */,
 				F2B6DF10206B078B00D3E8E8 /* cedetec.jpg */,
 				F2B6DEFE206AF97F00D3E8E8 /* AppDelegate.swift */,
@@ -137,6 +140,7 @@
 			files = (
 				F2B6DF09206AF97F00D3E8E8 /* LaunchScreen.storyboard in Resources */,
 				F2B6DF06206AF97F00D3E8E8 /* Assets.xcassets in Resources */,
+				F2B6DF57206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg in Resources */,
 				F2B6DF33206B1ABB00D3E8E8 /* art.scnassets in Resources */,
 				F2B6DF04206AF97F00D3E8E8 /* Main.storyboard in Resources */,
 				F2B6DF11206B078C00D3E8E8 /* cedetec.jpg in Resources */,
