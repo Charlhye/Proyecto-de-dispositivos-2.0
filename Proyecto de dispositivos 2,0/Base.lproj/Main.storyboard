@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -148,29 +153,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="1xS-Fk-vJe" kind="relationship" relationship="viewControllers" id="YwE-dE-ooZ"/>
-                        <segue destination="ljR-ax-uPf" kind="relationship" relationship="viewControllers" id="kAZ-xc-yRu"/>
+                        <segue destination="VwX-bN-VRJ" kind="relationship" relationship="viewControllers" id="OSn-Ve-ZhP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ul-X8-j1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="964" y="-335"/>
-        </scene>
-        <!--Vista 360-->
-        <scene sceneID="bdh-ZK-QjW">
-            <objects>
-                <viewController id="ljR-ax-uPf" customClass="ViewControllerAR" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="VCF-JS-22E">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
-                    <tabBarItem key="tabBarItem" title="Vista 360" id="oSF-j4-NjX"/>
-                    <connections>
-                        <outlet property="sceneView" destination="VCF-JS-22E" id="CUB-fA-Bcu"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OKQ-La-rGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1782" y="6"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="shO-sk-Y2L">
@@ -216,7 +204,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="QA9-mh-AR6" kind="relationship" relationship="viewControllers" id="Qo6-j9-go0"/>
-                        <segue destination="2VU-FS-j71" kind="relationship" relationship="viewControllers" id="MYT-rj-dKo"/>
+                        <segue destination="ahF-dR-2tq" kind="relationship" relationship="viewControllers" id="8ci-qH-hBY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nTr-BV-G8v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -252,26 +240,88 @@
             </objects>
             <point key="canvasLocation" x="1778" y="877"/>
         </scene>
-        <!--Vista 360-->
-        <scene sceneID="cSl-EJ-cA7">
+        <!--Second-->
+        <scene sceneID="Ot3-Vo-cGE">
             <objects>
-                <viewController id="2VU-FS-j71" customClass="ViewControllerAR" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Ybn-6h-SE4">
+                <viewController id="VwX-bN-VRJ" customClass="ViewControllerAR" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gbd-xx-kyB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
-                    <tabBarItem key="tabBarItem" title="Vista 360" id="mqh-OM-Y0p"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvz-1f-c1g">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            </arscnView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plano detectado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANX-Lo-1WZ">
+                                <rect key="frame" x="88.5" y="104" width="199" height="34.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dvz-1f-c1g" firstAttribute="leading" secondItem="AF1-52-WBI" secondAttribute="leading" id="2Hc-HI-ix7"/>
+                            <constraint firstItem="ANX-Lo-1WZ" firstAttribute="centerX" secondItem="gbd-xx-kyB" secondAttribute="centerX" id="DcB-xV-xtN"/>
+                            <constraint firstItem="ANX-Lo-1WZ" firstAttribute="top" secondItem="AF1-52-WBI" secondAttribute="top" constant="40" id="G9J-vR-1U9"/>
+                            <constraint firstItem="dvz-1f-c1g" firstAttribute="bottom" secondItem="AF1-52-WBI" secondAttribute="bottom" id="ZZ5-fr-kaP"/>
+                            <constraint firstItem="dvz-1f-c1g" firstAttribute="top" secondItem="gbd-xx-kyB" secondAttribute="top" id="nMm-SI-OUy"/>
+                            <constraint firstItem="dvz-1f-c1g" firstAttribute="trailing" secondItem="AF1-52-WBI" secondAttribute="trailing" id="pdW-9G-nCw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AF1-52-WBI"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Second" image="second" id="3my-AB-r4f"/>
                     <connections>
-                        <outlet property="sceneView" destination="Ybn-6h-SE4" id="Reh-SV-Ttt"/>
+                        <outlet property="planeDetected" destination="ANX-Lo-1WZ" id="5ar-CK-sUX"/>
+                        <outlet property="sceneView" destination="dvz-1f-c1g" id="wI9-h8-qj2"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HcK-Vb-UpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cKW-ee-SEc" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1782" y="1574"/>
+            <point key="canvasLocation" x="1782" y="9"/>
+        </scene>
+        <!--Second-->
+        <scene sceneID="ltL-I8-CNy">
+            <objects>
+                <viewController id="ahF-dR-2tq" customClass="ViewControllerAR2" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D8v-qF-Vgi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ax1-HD-qu5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            </arscnView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plano detectado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfR-L5-H4w">
+                                <rect key="frame" x="88.5" y="104" width="199" height="34.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WfR-L5-H4w" firstAttribute="top" secondItem="qZS-cd-oqb" secondAttribute="top" constant="40" id="9N8-47-EHG"/>
+                            <constraint firstItem="Ax1-HD-qu5" firstAttribute="leading" secondItem="qZS-cd-oqb" secondAttribute="leading" id="HzK-nc-rem"/>
+                            <constraint firstItem="Ax1-HD-qu5" firstAttribute="trailing" secondItem="qZS-cd-oqb" secondAttribute="trailing" id="Vje-Xz-eou"/>
+                            <constraint firstItem="Ax1-HD-qu5" firstAttribute="bottom" secondItem="qZS-cd-oqb" secondAttribute="bottom" id="WnE-T8-a9Q"/>
+                            <constraint firstItem="Ax1-HD-qu5" firstAttribute="top" secondItem="D8v-qF-Vgi" secondAttribute="top" id="mQd-TQ-pzG"/>
+                            <constraint firstItem="WfR-L5-H4w" firstAttribute="centerX" secondItem="D8v-qF-Vgi" secondAttribute="centerX" id="zcv-Df-8jw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qZS-cd-oqb"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Second" image="second" id="wqe-c8-HdW"/>
+                    <connections>
+                        <outlet property="planeDetected" destination="WfR-L5-H4w" id="FOQ-pf-Y6Q"/>
+                        <outlet property="sceneView" destination="Ax1-HD-qu5" id="S1V-mL-2SW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zel-EO-FXh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1777" y="1630"/>
         </scene>
     </scenes>
     <resources>
         <image name="cedetec.jpg" width="3072" height="2039"/>
+        <image name="second" width="16" height="16"/>
         <image name="tec-de-monterrey-becas-para-mexicanos.jpg" width="900" height="900"/>
     </resources>
 </document>
