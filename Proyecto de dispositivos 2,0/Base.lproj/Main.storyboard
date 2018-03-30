@@ -408,7 +408,7 @@
         <!--Salon View Controller-->
         <scene sceneID="nii-UR-QTy">
             <objects>
-                <viewController id="5mO-nU-rXb" customClass="SalonViewController" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Detalle" id="5mO-nU-rXb" customClass="SalonViewController" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bzI-gl-G2P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
