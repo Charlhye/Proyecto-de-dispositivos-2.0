@@ -16,14 +16,35 @@
 
 import UIKit
 
-class TableViewController2: UITableViewController {
+//paso 1: agregar el protocolo UISearchResultsUpdating
+class TableViewController2: UITableViewController, UISearchResultsUpdating  {
+    //paso 2: crear una variable para almacenar lo datos que son filtrados
+    var datosFiltrados = [Any]()
+    //paso 3: crear un control de búsqueda
+    let searchController = UISearchController(searchResultsController: nil)
     
-    //paso 8: agregar la direccion de donde se recuperan los datos en linea
+    //paso 4: crear la función updateSearchResults para cumplir con el protocolo
+    //UISearchResultsUpdating
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        // si la caja de búsuqeda es vacía, entonces mostrar todos los resultados
+        if searchController.searchBar.text! == "" {
+            datosFiltrados = nuevoArray!
+        } else {
+            // Filtrar los resultados de acuerdo al texto escrito en la caja que es obtenido a través del parámetro $0
+            datosFiltrados = nuevoArray!.filter {
+                let objetoMarca=$0 as! [String:Any];
+                let s:String = objetoMarca["nombre"] as! String;
+                return(s.lowercased().contains(searchController.searchBar.text!.lowercased())) }
+        }
+        
+        self.tableView.reloadData()
+    }
+    
     let direccion="http://199.233.252.86/201811/theway2/labsCDETEClleno.json"
-    //paso 2: declarar una variable para contener los nuevos datos
+
     var nuevoArray:[Any]?
     
-    //paso 3: incluir una funci[on que convierta de JSON a Array
     func JSONParseArray(_ string: String) -> [AnyObject]{
         if let data = string.data(using: String.Encoding.utf8){
             
@@ -49,6 +70,22 @@ class TableViewController2: UITableViewController {
         let datos = try? Data(contentsOf: url!)
         
         nuevoArray = try! JSONSerialization.jsonObject(with: datos!) as? [Any]
+        
+        //paso 5: copiar el contenido del arreglo en el arreglo filtrado
+        datosFiltrados = nuevoArray!
+        
+        //Paso 6: usar la vista actual para presentar los resultados de la búsqueda
+        searchController.searchResultsUpdater = self
+        //paso 7: controlar el background de los datos al momento de hacer la búsqueda
+        searchController.dimsBackgroundDuringPresentation = false
+        //Paso 8: manejar la barra de navegación durante la busuqeda
+        searchController.hidesNavigationBarDuringPresentation = false
+        //Paso 9: Definir el contexto de la búsqueda
+        definesPresentationContext = true
+        //Paso 10: Instalar la barra de búsqueda en la cabecera de la tabla
+        tableView.tableHeaderView = searchController.searchBar
+        //El re-uso de las celdas se puede realizar de manera programática a través del registro de la celda
+        //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "EntradaMarca")
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,11 +102,9 @@ class TableViewController2: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        
-        //paso 5: remplazar el uso de datos por nuevo array
-        return nuevoArray!.count
+        //paso 11 remplazar el uso de nuevoArray por datosFiltrados
+        return (datosFiltrados.count)
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -80,14 +115,61 @@ class TableViewController2: UITableViewController {
             cell = UITableViewCell(
                 style: UITableViewCellStyle.default, reuseIdentifier: "zelda")
         }
-        let objetoMarca = nuevoArray![indexPath.row] as! [String: Any]
+        //paso 12 remplazar el uso de nuevoArray por datosFitrados
+        //Usar el objeto marca para la obtencion de los datos
+        let objetoMarca = datosFiltrados[indexPath.row] as! [String: Any]
         let s:String = objetoMarca["nombre"] as! String
         cell.textLabel?.text=s
         return cell
         
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var indice = 0
+        var objetoMarca = [String:Any]()
+        //Paso 15: crear un identificador para el controlador de vista a nivel detalle
+        let sigVista = self.storyboard?.instantiateViewController(withIdentifier: "Detalle") as! SalonViewController
+        //Verificar si la vista actual es la de búsqueda
+        if (self.searchController.isActive)
+        {
+            indice = indexPath.row
+            objetoMarca = datosFiltrados[indice] as! [String: Any]
+            
+        }
+            //sino utilizar la vista sin filtro
+        else
+        {
+            indice = indexPath.row
+            objetoMarca = nuevoArray![indice] as! [String: Any]
+        }
+        
+        let nombre:String = objetoMarca["nombre"] as! String
+        let locacionPlanta:String = objetoMarca["locacionPlanta"] as! String
+        let locacionSalon:String = objetoMarca["locacionSalon"] as! String
+        let responsableNombre:String = objetoMarca["responsableNombre"] as! String
+        let responsableTelefono:String = objetoMarca["responsableTelefono"] as! String
+        let responsableCorreo:String = objetoMarca["responsableCorreo"] as! String
+        let descripcion:String = objetoMarca["descripcion"] as! String
+        let horaApertura:String = objetoMarca["horarioApertura"] as! String
+        let horaCierre:String = objetoMarca["horaCierre"] as! String
+        let fotografia:String = objetoMarca["fotografia"] as! String
+        let foto360:String = objetoMarca["foto360"] as! String
+        
+        sigVista.nombre = nombre
+        sigVista.locacionPlanta = locacionPlanta
+        sigVista.locacionSalon = locacionSalon
+        sigVista.responsableNombre = responsableNombre
+        sigVista.responsableTelefono = responsableTelefono
+        sigVista.responsableCorreo = responsableCorreo
+        sigVista.descripcion = descripcion
+        sigVista.horaApertura = horaApertura
+        sigVista.horaCierre = horaCierre
+        sigVista.fotografia = fotografia
+        sigVista.foto360 = foto360
+        
+        self.navigationController?.pushViewController(sigVista, animated: true)
+        
+    }
     
     // MARK: - Navigation
     /*
