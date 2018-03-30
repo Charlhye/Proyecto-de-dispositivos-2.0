@@ -41,6 +41,8 @@ class SalonViewController: UIViewController {
         horaAplb.text! = "\(horaApertura)"
         horaCilb.text! = "\(horaCierre)"
         
+        
+        
         let url = URL(string: fotografia)
         let data = try? Data(contentsOf: url!)
         let img = UIImage(data: data!)
@@ -55,10 +57,10 @@ class SalonViewController: UIViewController {
         
         let objetos:[AnyObject]=["Estoy en el aula \(locacionlb.text!): \(nombre)!" as AnyObject]
             
-            let actividad=UIActivityViewController(activityItems: objetos,applicationActivities: nil)
+        let actividad=UIActivityViewController(activityItems: objetos,applicationActivities: nil)
             
-            actividad.excludedActivityTypes=[UIActivityType.mail]
-            self.present(actividad,animated:true, completion:nil)
+        actividad.excludedActivityTypes=[UIActivityType.mail]
+        self.present(actividad,animated:true, completion:nil)
         
     }
     override func didReceiveMemoryWarning() {

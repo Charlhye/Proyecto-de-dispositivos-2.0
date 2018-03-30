@@ -209,6 +209,7 @@ class TableViewController1: UITableViewController, UISearchResultsUpdating {
         sigVista.fotografia = fotografia
         sigVista.foto360 = foto360
         
+        
         self.navigationController?.pushViewController(sigVista, animated: true)
         
     }

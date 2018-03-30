@@ -65,6 +65,21 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             portalNode?.position = SCNVector3(planeXposition,planeYposition,planeZposition)
             self.sceneView.scene.rootNode.addChildNode(portalNode!)
             
+            
+            let portalScene2 = SCNScene(named:"art.scnassets/ship.scn")
+            /*var portalScene2: SCNScene?
+             do {
+             portalScene2 = try SCNScene(url: URL(fileURLWithPath: ruta), options: nil)
+             } catch {}*/
+            let portalNode2 = portalScene2?.rootNode.childNode(withName: "Portal", recursively: false)
+            //convertir las coordenadas del rayo del tap a coordenadas del mundo real
+            let transform2 = hitTestResult.worldTransform
+            let planeXposition2 = transform2.columns.3.x
+            let planeYposition2 = transform2.columns.3.y
+            let planeZposition2 = transform2.columns.3.z
+            portalNode2?.position = SCNVector3(planeXposition2,planeYposition2,planeZposition2)
+            self.sceneView.scene.rootNode.addChildNode(portalNode2!)
+            
         }
         
         override func didReceiveMemoryWarning() {
