@@ -91,20 +91,36 @@ class TableViewController1: UITableViewController {
     
     
     // MARK: - Navigation
-    /*
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        let sigVista = segue.destination as! DetalleViewController
-        let indice = self.tableView.indexPathForSelectedRow?.row
-        //paso 7: reemplazar el uso de datos por nuevoArrat
-        //objetoMarca es un diccionario que contiene marca y agencias
-        let objetoMarca = nuevoArray![indice!] as! [String: Any]
-        let s:String = objetoMarca["marca"] as! String
         
-        sigVista.valorRecibido = s
-    }*/
+        let sigVista = segue.destination as! SalonViewController
+        let indice = self.tableView.indexPathForSelectedRow?.row
+        let objetoMarca = nuevoArray![indice!] as! [String: Any]
+        
+        let nombre:String = objetoMarca["nombre"] as! String
+        let locacionPlanta:String = objetoMarca["locacionPlanta"] as! String
+        let locacionSalon:String = objetoMarca["locacionSalon"] as! String
+        let responsableNombre:String = objetoMarca["responsableNombre"] as! String
+        let responsableTelefono:String = objetoMarca["responsableTelefono"] as! String
+        let responsableCorreo:String = objetoMarca["responsableCorreo"] as! String
+        let descripcion:String = objetoMarca["descripcion"] as! String
+        let horaApertura:String = objetoMarca["horarioApertura"] as! String
+        let horaCierre:String = objetoMarca["horaCierre"] as! String
+        let fotografia:String = objetoMarca["fotografia"] as! String
+        
+        sigVista.nombre = nombre
+        sigVista.locacionPlanta = locacionPlanta
+        sigVista.locacionSalon = locacionSalon
+        sigVista.responsableNombre = responsableNombre
+        sigVista.responsableTelefono = responsableTelefono
+        sigVista.responsableCorreo = responsableCorreo
+        sigVista.descripcion = descripcion
+        sigVista.horaApertura = horaApertura
+        sigVista.horaCierre = horaCierre
+        sigVista.fotografia = fotografia
+    }
     
     
 }

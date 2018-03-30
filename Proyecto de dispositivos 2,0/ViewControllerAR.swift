@@ -50,6 +50,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
         func addPortal(hitTestResult:ARHitTestResult)
         {
             let portalScene = SCNScene(named:"escenes.sncassets/Portal.scn")
+            
             let portalNode = portalScene?.rootNode.childNode(withName: "Portal", recursively: false)
             //convertir las coordenadas del rayo del tap a coordenadas del mundo real
             let transform = hitTestResult.worldTransform
