@@ -109,6 +109,7 @@ class TableViewController1: UITableViewController {
         let horaApertura:String = objetoMarca["horarioApertura"] as! String
         let horaCierre:String = objetoMarca["horaCierre"] as! String
         let fotografia:String = objetoMarca["fotografia"] as! String
+        let foto360:String = objetoMarca["foto360"] as! String
         
         sigVista.nombre = nombre
         sigVista.locacionPlanta = locacionPlanta
@@ -120,6 +121,7 @@ class TableViewController1: UITableViewController {
         sigVista.horaApertura = horaApertura
         sigVista.horaCierre = horaCierre
         sigVista.fotografia = fotografia
+        sigVista.foto360 = foto360
     }
     
     

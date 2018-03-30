@@ -369,7 +369,7 @@
         <!--Second-->
         <scene sceneID="ltL-I8-CNy">
             <objects>
-                <viewController id="ahF-dR-2tq" customClass="ViewControllerAR2" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ahF-dR-2tq" customClass="ViewControllerAR" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D8v-qF-Vgi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

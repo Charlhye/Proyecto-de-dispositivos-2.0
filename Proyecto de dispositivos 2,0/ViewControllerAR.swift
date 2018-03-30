@@ -11,6 +11,8 @@ import SceneKit
 import ARKit
 
 class ViewControllerAR: UIViewController, ARSCNViewDelegate {
+    
+        var ruta = ""
 
         //etiqueta para indicar al usuario que el plano horizontal ha sido detectadi
         @IBOutlet weak var planeDetected: UILabel!
@@ -50,7 +52,10 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
         func addPortal(hitTestResult:ARHitTestResult)
         {
             let portalScene = SCNScene(named:"escenes.sncassets/Portal.scn")
-            
+            /*var portalScene: SCNScene?
+            do {
+                portalScene = try SCNScene(url: URL(fileURLWithPath: ruta), options: nil)
+            } catch {}*/
             let portalNode = portalScene?.rootNode.childNode(withName: "Portal", recursively: false)
             //convertir las coordenadas del rayo del tap a coordenadas del mundo real
             let transform = hitTestResult.worldTransform

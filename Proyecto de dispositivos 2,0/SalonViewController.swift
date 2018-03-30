@@ -20,6 +20,7 @@ class SalonViewController: UIViewController {
     var horaApertura = ""
     var horaCierre = ""
     var fotografia = ""
+    var foto360 = ""
     
     @IBOutlet weak var descripcionlb: UILabel!
     @IBOutlet weak var locacionlb: UILabel!
@@ -68,14 +69,17 @@ class SalonViewController: UIViewController {
     
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let sigVista = segue.destination as! ViewControllerAR
+        
+        sigVista.ruta = foto360
     }
-    */
+    
 
 }
