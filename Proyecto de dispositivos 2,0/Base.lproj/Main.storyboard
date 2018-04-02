@@ -190,7 +190,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zur-vU-Lvj">
-                                <rect key="frame" x="153" y="498" width="68" height="30"/>
+                                <rect key="frame" x="95" y="498" width="183" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ver en AR"/>
                                 <connections>
@@ -223,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1T-f8-eS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2636" y="-201"/>
+            <point key="canvasLocation" x="2636" y="-201.04947526236884"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="NLe-ZG-ene">
@@ -331,6 +331,12 @@
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvz-1f-c1g">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Hge-rF-9ha" appends="YES" id="E5X-F6-ZjJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="cby-lV-wPs" appends="YES" id="ivz-uz-Nj0"/>
+                                    <outletCollection property="gestureRecognizers" destination="H5a-sH-yjK" appends="YES" id="ptJ-6W-TRb"/>
+                                </connections>
                             </arscnView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plano detectado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANX-Lo-1WZ">
                                 <rect key="frame" x="88.5" y="60" width="199" height="34.5"/>
@@ -357,6 +363,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKW-ee-SEc" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="Hge-rF-9ha">
+                    <connections>
+                        <action selector="pinchGest:" destination="VwX-bN-VRJ" id="Gbr-hg-LRa"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="cby-lV-wPs">
+                    <connections>
+                        <action selector="rotateGest:" destination="VwX-bN-VRJ" id="vxg-cH-6hS"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="H5a-sH-yjK">
+                    <connections>
+                        <action selector="swipeGest:" destination="VwX-bN-VRJ" id="ovr-s3-bZb"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3598" y="-201"/>
         </scene>
@@ -447,7 +468,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwk-Om-S96">
-                                <rect key="frame" x="153" y="498" width="68" height="30"/>
+                                <rect key="frame" x="57" y="498" width="263" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ver en AR"/>
                                 <connections>
@@ -480,7 +501,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wrb-5l-zG5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2636" y="606"/>
+            <point key="canvasLocation" x="2636" y="605.84707646176912"/>
         </scene>
     </scenes>
     <resources>

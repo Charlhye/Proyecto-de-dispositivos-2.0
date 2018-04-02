@@ -100,6 +100,14 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now()+3){self.planeDetected.isHidden = true}
         }
         
+    @IBAction func pinchGest(_ sender: UIPinchGestureRecognizer) {
+        
+    }
     
-
+    @IBAction func rotateGest(_ sender: UIRotationGestureRecognizer) {
+    }
+    
+    @IBAction func swipeGest(_ sender: UISwipeGestureRecognizer) {
+    }
+    
 }
