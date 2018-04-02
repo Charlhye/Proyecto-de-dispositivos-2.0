@@ -145,12 +145,13 @@
         <!--Salon View Controller-->
         <scene sceneID="piz-wM-nk0">
             <objects>
-                <viewController id="Utf-bp-O2W" customClass="SalonViewController" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1T-f8-eS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="Detalle" id="Utf-bp-O2W" customClass="SalonViewController" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ar-az-I39">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDD-p9-If4">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDD-p9-If4">
                                 <rect key="frame" x="1" y="64" width="374" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -221,7 +222,6 @@
                         <outlet property="responsablelb" destination="p5q-Eb-VSK" id="FUh-Rw-Xsp"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e1T-f8-eS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2636" y="-201.04947526236884"/>
         </scene>
@@ -324,26 +324,36 @@
         <!--Second-->
         <scene sceneID="Ot3-Vo-cGE">
             <objects>
+                <pinchGestureRecognizer id="Hge-rF-9ha">
+                    <connections>
+                        <action selector="pinchGest:" destination="VwX-bN-VRJ" id="ngY-fD-LQ9"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="H5a-sH-yjK">
+                    <connections>
+                        <action selector="swipeGest:" destination="VwX-bN-VRJ" id="ovr-s3-bZb"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cKW-ee-SEc" sceneMemberID="firstResponder"/>
                 <viewController id="VwX-bN-VRJ" customClass="ViewControllerAR" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gbd-xx-kyB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvz-1f-c1g">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Hge-rF-9ha" appends="YES" id="E5X-F6-ZjJ"/>
-                                    <outletCollection property="gestureRecognizers" destination="cby-lV-wPs" appends="YES" id="ivz-uz-Nj0"/>
-                                    <outletCollection property="gestureRecognizers" destination="H5a-sH-yjK" appends="YES" id="ptJ-6W-TRb"/>
-                                </connections>
-                            </arscnView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plano detectado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANX-Lo-1WZ">
                                 <rect key="frame" x="88.5" y="60" width="199" height="34.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvz-1f-c1g">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Hge-rF-9ha" appends="YES" id="E5X-F6-ZjJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="H5a-sH-yjK" appends="YES" id="ptJ-6W-TRb"/>
+                                </connections>
+                            </arscnView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -362,146 +372,8 @@
                         <outlet property="sceneView" destination="dvz-1f-c1g" id="wI9-h8-qj2"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cKW-ee-SEc" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="Hge-rF-9ha">
-                    <connections>
-                        <action selector="pinchGest:" destination="VwX-bN-VRJ" id="Gbr-hg-LRa"/>
-                    </connections>
-                </pinchGestureRecognizer>
-                <rotationGestureRecognizer id="cby-lV-wPs">
-                    <connections>
-                        <action selector="rotateGest:" destination="VwX-bN-VRJ" id="vxg-cH-6hS"/>
-                    </connections>
-                </rotationGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="H5a-sH-yjK">
-                    <connections>
-                        <action selector="swipeGest:" destination="VwX-bN-VRJ" id="ovr-s3-bZb"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3598" y="-201"/>
-        </scene>
-        <!--Second-->
-        <scene sceneID="ltL-I8-CNy">
-            <objects>
-                <viewController id="ahF-dR-2tq" customClass="ViewControllerAR" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="D8v-qF-Vgi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ax1-HD-qu5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </arscnView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plano detectado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfR-L5-H4w">
-                                <rect key="frame" x="88.5" y="60" width="199" height="34.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="WfR-L5-H4w" firstAttribute="top" secondItem="qZS-cd-oqb" secondAttribute="top" constant="40" id="9N8-47-EHG"/>
-                            <constraint firstItem="Ax1-HD-qu5" firstAttribute="leading" secondItem="qZS-cd-oqb" secondAttribute="leading" id="HzK-nc-rem"/>
-                            <constraint firstItem="Ax1-HD-qu5" firstAttribute="trailing" secondItem="qZS-cd-oqb" secondAttribute="trailing" id="Vje-Xz-eou"/>
-                            <constraint firstItem="Ax1-HD-qu5" firstAttribute="bottom" secondItem="qZS-cd-oqb" secondAttribute="bottom" id="WnE-T8-a9Q"/>
-                            <constraint firstItem="Ax1-HD-qu5" firstAttribute="top" secondItem="D8v-qF-Vgi" secondAttribute="top" id="mQd-TQ-pzG"/>
-                            <constraint firstItem="WfR-L5-H4w" firstAttribute="centerX" secondItem="D8v-qF-Vgi" secondAttribute="centerX" id="zcv-Df-8jw"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="qZS-cd-oqb"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="wqe-c8-HdW"/>
-                    <connections>
-                        <outlet property="planeDetected" destination="WfR-L5-H4w" id="FOQ-pf-Y6Q"/>
-                        <outlet property="sceneView" destination="Ax1-HD-qu5" id="S1V-mL-2SW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zel-EO-FXh" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3598" y="606"/>
-        </scene>
-        <!--Salon View Controller-->
-        <scene sceneID="nii-UR-QTy">
-            <objects>
-                <viewController storyboardIdentifier="Detalle" id="5mO-nU-rXb" customClass="SalonViewController" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bzI-gl-G2P">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FGY-7n-Zwm">
-                                <rect key="frame" x="1" y="64" width="374" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descripcion" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByW-tF-MUj">
-                                <rect key="frame" x="57" y="97" width="263" height="115"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Locación" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXZ-Sz-Mp0">
-                                <rect key="frame" x="153" y="220" width="69" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Responsable" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8n-Li-oTC">
-                                <rect key="frame" x="57" y="295" width="263" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hora apertura" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncK-Bl-IXD">
-                                <rect key="frame" x="134" y="406" width="107" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hora cierre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kG9-Q1-Sgo">
-                                <rect key="frame" x="144" y="435" width="86" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwk-Om-S96">
-                                <rect key="frame" x="57" y="498" width="263" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Ver en AR"/>
-                                <connections>
-                                    <segue destination="ahF-dR-2tq" kind="show" id="2hY-dS-E0U"/>
-                                </connections>
-                            </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LR6-db-fGM">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem systemItem="action" id="LD7-cS-r86">
-                                        <connections>
-                                            <action selector="compartir:" destination="5mO-nU-rXb" id="1NI-Jd-Xkb"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="bAS-J4-Ur7"/>
-                    </view>
-                    <connections>
-                        <outlet property="descripcionlb" destination="ByW-tF-MUj" id="UZ5-4R-GH9"/>
-                        <outlet property="horaAplb" destination="ncK-Bl-IXD" id="ybJ-xV-qsc"/>
-                        <outlet property="horaCilb" destination="kG9-Q1-Sgo" id="Ade-2o-C5F"/>
-                        <outlet property="imageView" destination="FGY-7n-Zwm" id="yAn-dK-KyW"/>
-                        <outlet property="locacionlb" destination="dXZ-Sz-Mp0" id="qNg-q0-DC2"/>
-                        <outlet property="responsablelb" destination="h8n-Li-oTC" id="CQr-AS-pHC"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wrb-5l-zG5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2636" y="605.84707646176912"/>
         </scene>
     </scenes>
     <resources>

@@ -71,11 +71,11 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
              do {
              portalScene2 = try SCNScene(url: URL(fileURLWithPath: ruta), options: nil)
              } catch {}*/
-            let portalNode2 = portalScene2?.rootNode.childNode(withName: "Portal", recursively: false)
+            let portalNode2 = portalScene2?.rootNode.childNode(withName: "ship", recursively: false)
             //convertir las coordenadas del rayo del tap a coordenadas del mundo real
             let transform2 = hitTestResult.worldTransform
             let planeXposition2 = transform2.columns.3.x
-            let planeYposition2 = transform2.columns.3.y
+            let planeYposition2 = transform2.columns.3.y + 1
             let planeZposition2 = transform2.columns.3.z
             portalNode2?.position = SCNVector3(planeXposition2,planeYposition2,planeZposition2)
             self.sceneView.scene.rootNode.addChildNode(portalNode2!)
@@ -102,12 +102,35 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
         
     @IBAction func pinchGest(_ sender: UIPinchGestureRecognizer) {
         
+        let casa = self.sceneView.scene.rootNode.childNode(withName: "ship", recursively: false)
+        
+        let escala = sender.scale
+        print(escala)
+        
+        casa?.scale.x *= Float(escala)
+        casa?.scale.y *= Float(escala)
+        casa?.scale.z *= Float(escala)
     }
     
     @IBAction func rotateGest(_ sender: UIRotationGestureRecognizer) {
+        print("rotar")
     }
     
     @IBAction func swipeGest(_ sender: UISwipeGestureRecognizer) {
+        print("swip")
+        let casa = self.sceneView.scene.rootNode.childNode(withName: "ship", recursively: false)
+        
+        var x = casa?.rotation.z
+        
+        if(sender.direction == UISwipeGestureRecognizerDirection.left){
+            print("izq")
+            x = (casa?.rotation.z)! - 0.1
+        }else{
+            print("der")
+            x = (casa?.rotation.z)! + 0.1
+        }
+        
+        casa?.rotation = SCNVector4((casa?.rotation.x)!,(casa?.rotation.y)!,x!, (casa?.rotation.w)!)
     }
     
 }
