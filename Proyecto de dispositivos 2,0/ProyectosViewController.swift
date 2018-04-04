@@ -55,9 +55,16 @@ class ProyectosViewController: UIViewController {
                 }
                 usuario?.addProyecto(withName: nombre, estado: estado, recs: recursos1)
             }
+            segueChafa()
 
         }
         
+    }
+    
+    func segueChafa(){
+        let sigVista = self.storyboard?.instantiateViewController(withIdentifier: "Listaproys") as! TableViewController2
+        sigVista.usuario = usuario        
+        self.navigationController?.pushViewController(sigVista, animated: true)
     }
     
     /*

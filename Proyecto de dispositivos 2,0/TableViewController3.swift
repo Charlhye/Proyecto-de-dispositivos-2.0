@@ -1,25 +1,17 @@
 //
-//  TableViewController1TableViewController.swift
+//  TableViewController3.swift
 //  Proyecto de dispositivos 2,0
 //
-//  Created by Manuel Avalos Tovar on 3/28/18.
-//  Copyright © 2018 The Way 2.0. All rights reserved.
-//
-
-//
-//  TableViewControler1.swift
-//  Proyecto de dispositivos 2,0
-//
-//  Created by Manuel Avalos Tovar on 3/28/18.
+//  Created by CDT307 on 4/4/18.
 //  Copyright © 2018 The Way 2.0. All rights reserved.
 //
 
 import UIKit
 
-//paso 1: agregar el protocolo UISearchResultsUpdating
-class TableViewController2: UITableViewController, UISearchResultsUpdating  {
+class TableViewController3: UITableViewController, UISearchResultsUpdating  {
+
     //paso 2: crear una variable para almacenar lo datos que son filtrados
-    var datosFiltrados: [Usuario.proyecto]?
+    var datosFiltrados: [String]?
     //paso 3: crear un control de búsqueda
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -33,22 +25,22 @@ class TableViewController2: UITableViewController, UISearchResultsUpdating  {
         } else {
             // Filtrar los resultados de acuerdo al texto escrito en la caja que es obtenido a través del parámetro $0
             datosFiltrados = nuevoArray!.filter {
-                let objetoMarca=$0 as! Usuario.proyecto;
-                let s:String = objetoMarca.nombre as! String;
+                let objetoMarca=$0 as! String;
+                let s:String = objetoMarca;
                 return(s.lowercased().contains(searchController.searchBar.text!.lowercased())) }
         }
         
         self.tableView.reloadData()
     }
     
-    var nuevoArray:[Usuario.proyecto]?
+    var nuevoArray:[String]?
     
-    var usuario: Usuario?
+    var proyecto: Usuario.proyecto?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nuevoArray = usuario?.proyectos
+        nuevoArray = proyecto?.recursos
         
         //paso 5: copiar el contenido del arreglo en el arreglo filtrado
         datosFiltrados = nuevoArray!
@@ -97,7 +89,7 @@ class TableViewController2: UITableViewController, UISearchResultsUpdating  {
         //paso 12 remplazar el uso de nuevoArray por datosFitrados
         //Usar el objeto marca para la obtencion de los datos
         let objetoMarca = datosFiltrados![indexPath.row]
-        let s:String = objetoMarca.nombre
+        let s:String = objetoMarca
         cell.textLabel?.text=s
         return cell
         
@@ -105,23 +97,22 @@ class TableViewController2: UITableViewController, UISearchResultsUpdating  {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var indice = 0
-        var objetoMarca: Usuario.proyecto?
+        var objetoMarca: String?
         //Paso 15: crear un identificador para el controlador de vista a nivel detalle
-        let sigVista = self.storyboard?.instantiateViewController(withIdentifier: "ListaRecs") as! TableViewController3
+        let sigVista = self.storyboard?.instantiateViewController(withIdentifier: "ListaNormal") as! TableViewController1
         //Verificar si la vista actual es la de búsqueda
         if (self.searchController.isActive)
         {
             indice = indexPath.row
             objetoMarca = datosFiltrados![indice]
-            sigVista.proyecto = objetoMarca
-            
+            sigVista.stringBusqueda = objetoMarca!
         }
             //sino utilizar la vista sin filtro
         else
         {
             indice = indexPath.row
             objetoMarca = nuevoArray![indice]
-            sigVista.proyecto = objetoMarca
+            sigVista.stringBusqueda = objetoMarca!
         }
         
         self.navigationController?.pushViewController(sigVista, animated: true)
@@ -130,19 +121,18 @@ class TableViewController2: UITableViewController, UISearchResultsUpdating  {
     
     // MARK: - Navigation
     /*
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        let sigVista = segue.destination as! DetalleViewController2
-        let indice = self.tableView.indexPathForSelectedRow?.row
-        //paso 7: reemplazar el uso de datos por nuevoArrat
-        //objetoMarca es un diccionario que contiene marca y agencias
-        let objetoMarca = nuevoArray![indice!] as! [String: Any]
-        let s:String = objetoMarca["marca"] as! String
-        
-        sigVista.valorRecibido = s
-    }*/
-    
-    
-}//
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     let sigVista = segue.destination as! DetalleViewController2
+     let indice = self.tableView.indexPathForSelectedRow?.row
+     //paso 7: reemplazar el uso de datos por nuevoArrat
+     //objetoMarca es un diccionario que contiene marca y agencias
+     let objetoMarca = nuevoArray![indice!] as! [String: Any]
+     let s:String = objetoMarca["marca"] as! String
+     
+     sigVista.valorRecibido = s
+     }*/
+
+}

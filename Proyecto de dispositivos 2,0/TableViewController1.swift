@@ -18,6 +18,8 @@ import UIKit
 
 //paso 1: agregar el protocolo UISearchResultsUpdating
 class TableViewController1: UITableViewController, UISearchResultsUpdating {
+    
+    var stringBusqueda = ""
     //paso 2: crear una variable para almacenar lo datos que son filtrados
     var datosFiltrados = [Any]()
     //paso 3: crear un control de búsqueda
@@ -71,6 +73,8 @@ class TableViewController1: UITableViewController, UISearchResultsUpdating {
         let datos = try? Data(contentsOf: url!)
 
         nuevoArray = try! JSONSerialization.jsonObject(with: datos!) as? [Any]
+        
+        searchController.searchBar.text! = stringBusqueda
         
         //paso 5: copiar el contenido del arreglo en el arreglo filtrado
         datosFiltrados = nuevoArray!

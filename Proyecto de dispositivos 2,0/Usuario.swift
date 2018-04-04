@@ -17,7 +17,7 @@ class Usuario{
         var recursos: [String]
     }
     
-    private var proyectos: [proyecto]
+    var proyectos: [proyecto]
     
     func addProyecto(withName name: String, estado: String, recs: [String]){
         let temp = proyecto(nombre: name, status: estado, recursos: recs)
