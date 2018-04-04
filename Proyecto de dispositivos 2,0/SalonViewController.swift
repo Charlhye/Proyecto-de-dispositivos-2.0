@@ -79,7 +79,7 @@ class SalonViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         let sigVista = segue.destination as! ViewControllerAR
-        
+        print("foto"+foto360)
         sigVista.ruta = foto360
     }
     

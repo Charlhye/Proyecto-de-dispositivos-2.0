@@ -47,7 +47,7 @@ class ProyectosViewController: UIViewController {
                 let recursos = proyecto["resources"] as! [Any]
                 var recursos1: [String] = []
                 
-                for j in 0..<recursos.count-1{
+                for j in 0..<recursos.count{
                     let rec = recursos[j] as! [String:Any]
                     let nom = rec["resourceName"] as! String
                     //print(nom)

@@ -63,6 +63,14 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             let planeYposition = transform.columns.3.y
             let planeZposition = transform.columns.3.z
             portalNode?.position = SCNVector3(planeXposition,planeYposition,planeZposition)
+            
+            for i in 0...5{
+                let img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/\(i+1).png")!))
+                portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[i].diffuse.contents = img
+            }
+            
+            
+            
             self.sceneView.scene.rootNode.addChildNode(portalNode!)
             
             
