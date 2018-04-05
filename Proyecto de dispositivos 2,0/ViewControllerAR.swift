@@ -64,16 +64,31 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             let planeZposition = transform.columns.3.z
             portalNode?.position = SCNVector3(planeXposition,planeYposition,planeZposition)
             
-            for i in 0...5{
-                let img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/\(i+1).png")!))
-                portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[i].diffuse.contents = img
-            }
+            var img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/1.png")!))
+            portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[0].diffuse.contents = img
+            
+            img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/2.png")!))
+            portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[1].diffuse.contents = img
+            
+            img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/3.png")!))
+            portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[2].diffuse.contents = img
+            
+            img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/4.png")!))
+            portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[3].diffuse.contents = img
+            
+            img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/5.png")!))
+            portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[4].diffuse.contents = img
+            
+            img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/6.png")!))
+            portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[5].diffuse.contents = img
+            
+ 
             
             
             
             self.sceneView.scene.rootNode.addChildNode(portalNode!)
             
-            
+            /*
             let portalScene2 = SCNScene(named:"art.scnassets/ship.scn")
             /*var portalScene2: SCNScene?
              do {
@@ -87,7 +102,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             let planeZposition2 = transform2.columns.3.z
             portalNode2?.position = SCNVector3(planeXposition2,planeYposition2,planeZposition2)
             self.sceneView.scene.rootNode.addChildNode(portalNode2!)
-            
+            */
         }
         
         override func didReceiveMemoryWarning() {
