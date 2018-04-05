@@ -353,7 +353,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Hge-rF-9ha" appends="YES" id="E5X-F6-ZjJ"/>
-                                    <outletCollection property="gestureRecognizers" destination="H5a-sH-yjK" appends="YES" id="ptJ-6W-TRb"/>
+                                    <outletCollection property="gestureRecognizers" destination="mzz-X5-LQX" appends="YES" id="4Xo-Mm-ePS"/>
                                 </connections>
                             </arscnView>
                         </subviews>
@@ -379,12 +379,12 @@
                         <action selector="pinchGest:" destination="VwX-bN-VRJ" id="ngY-fD-LQ9"/>
                     </connections>
                 </pinchGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="H5a-sH-yjK">
-                    <connections>
-                        <action selector="swipeGest:" destination="VwX-bN-VRJ" id="ovr-s3-bZb"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKW-ee-SEc" sceneMemberID="firstResponder"/>
+                <rotationGestureRecognizer id="mzz-X5-LQX">
+                    <connections>
+                        <action selector="rotateGest:" destination="VwX-bN-VRJ" id="Dba-R3-V5X"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2636" y="-174"/>
         </scene>

@@ -88,7 +88,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             
             self.sceneView.scene.rootNode.addChildNode(portalNode!)
             
-            /*
+            
             let portalScene2 = SCNScene(named:"art.scnassets/ship.scn")
             /*var portalScene2: SCNScene?
              do {
@@ -102,7 +102,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             let planeZposition2 = transform2.columns.3.z
             portalNode2?.position = SCNVector3(planeXposition2,planeYposition2,planeZposition2)
             self.sceneView.scene.rootNode.addChildNode(portalNode2!)
-            */
+            
         }
         
         override func didReceiveMemoryWarning() {
@@ -137,23 +137,29 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     
     @IBAction func rotateGest(_ sender: UIRotationGestureRecognizer) {
         print("rotar")
-    }
-    
-    @IBAction func swipeGest(_ sender: UISwipeGestureRecognizer) {
-        print("swip")
         let casa = self.sceneView.scene.rootNode.childNode(withName: "ship", recursively: false)
         
-        var x = casa?.rotation.z
+        let escala = sender.rotation
+        print(escala)
         
-        if(sender.direction == UISwipeGestureRecognizerDirection.left){
-            print("izq")
-            x = (casa?.rotation.z)! - 0.1
-        }else{
-            print("der")
-            x = (casa?.rotation.z)! + 0.1
-        }
-        
-        casa?.rotation = SCNVector4((casa?.rotation.x)!,(casa?.rotation.y)!,x!, (casa?.rotation.w)!)
+        casa?.eulerAngles.y += Float(escala)
     }
+    
+//    @IBAction func swipeGest(_ sender: UISwipeGestureRecognizer) {
+//        print("swip")
+//        let casa = self.sceneView.scene.rootNode.childNode(withName: "ship", recursively: false)
+//
+//        var x = casa?.rotation.z
+//
+//        if(sender.direction == UISwipeGestureRecognizerDirection.left){
+//            print("izq")
+//            x = (casa?.rotation.z)! - 0.1
+//        }else{
+//            print("der")
+//            x = (casa?.rotation.z)! + 0.1
+//        }
+//
+//        casa?.rotation = SCNVector4((casa?.rotation.x)!,(casa?.rotation.y)!,x!, (casa?.rotation.w)!)
+//    }
     
 }
