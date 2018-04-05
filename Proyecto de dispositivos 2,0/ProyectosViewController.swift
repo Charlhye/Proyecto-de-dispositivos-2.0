@@ -14,6 +14,7 @@ class ProyectosViewController: UIViewController {
     
     let direccion = "http://199.233.252.86/201811/data/user.json"
     
+    @IBOutlet weak var login: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,6 +58,8 @@ class ProyectosViewController: UIViewController {
             }
             segueChafa()
 
+        }else{
+            login.isHidden = false
         }
         
     }
