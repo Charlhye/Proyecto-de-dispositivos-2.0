@@ -200,6 +200,7 @@ class TableViewController1: UITableViewController, UISearchResultsUpdating {
         let horaCierre:String = objetoMarca["horaCierre"] as! String
         let fotografia:String = objetoMarca["fotografia"] as! String
         let foto360:String = objetoMarca["foto360"] as! String
+        let video:String = objetoMarca["video"] as! String
         
         sigVista.nombre = nombre
         sigVista.locacionPlanta = locacionPlanta
@@ -212,6 +213,7 @@ class TableViewController1: UITableViewController, UISearchResultsUpdating {
         sigVista.horaCierre = horaCierre
         sigVista.fotografia = fotografia
         sigVista.foto360 = foto360
+        sigVista.video = video
         
         
         self.navigationController?.pushViewController(sigVista, animated: true)

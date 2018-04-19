@@ -13,6 +13,7 @@ import ARKit
 class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     
     var ruta = ""
+    var videoadd = ""
     
     var hasPortal = false
     var hasTresde = false
@@ -55,13 +56,11 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             
             var traduccion = matrix_identity_float4x4
             //definir un metro alejado del dispositivo
-            traduccion.columns.2.y = -1.0
+            //traduccion.columns.3.z = -1.0
             portalNode?.simdTransform = matrix_multiply(dondeLoPuso!, traduccion)
+            portalNode?.eulerAngles = SCNVector3(0, Double.pi/2, 0)
+            portalNode?.position.y = (portalNode?.position.y)! - 1
             
-//            let planeXposition = 0
-//            let planeYposition = -1
-//            let planeZposition = 0
-//            portalNode?.position = SCNVector3(planeXposition,planeYposition,planeZposition)
             
             var img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/1.png")!))
             portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[0].diffuse.contents = img
@@ -83,6 +82,10 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             
             self.sceneView.scene.rootNode.addChildNode(portalNode!)
             hasPortal = true
+        } else {
+            self.sceneView.scene.rootNode.childNode(withName: "Portal", recursively: false)?.removeFromParentNode()
+            
+            hasPortal = false
         }
        
     }
@@ -93,13 +96,19 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             
             let portalNode2 = portalScene2?.rootNode.childNode(withName: "ship", recursively: false)
             
-            portalNode2?.simdTransform = dondeLoPuso!
+            var traduccion = matrix_identity_float4x4
+            portalNode2?.simdTransform = matrix_multiply(dondeLoPuso!, traduccion)
+            portalNode2?.eulerAngles = SCNVector3(0, Double.pi/2, 0)
             
-//            let planeXposition2 = 0
-//            let planeYposition2 = 0
-//            let planeZposition2 = 0
-//            portalNode2?.position = SCNVector3(planeXposition2,planeYposition2,planeZposition2)
+            portalNode2?.position.y = (portalNode2?.position.y)! - 0.5
+            
             self.sceneView.scene.rootNode.addChildNode(portalNode2!)
+            
+            hasTresde = true
+        } else {
+            self.sceneView.scene.rootNode.childNode(withName: "ship", recursively: false)?.removeFromParentNode()
+            
+            hasTresde = false
         }
         
     }
@@ -113,7 +122,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             //let path = Bundle.main.path(forResource: "CheeziPuffs", ofType: "mov")
             //let url = URL(fileURLWithPath: path!)
             
-            let moviePath = "http://ebookfrenzy.com/ios_book/movie/movie.mov"
+            let moviePath = videoadd
             let url = URL(string: moviePath)
             let player = AVPlayer(url: url!)
             player.volume = 0.5
@@ -143,6 +152,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             pantalla.firstMaterial?.isDoubleSided = true
             
             let pantallaPlanaNodo = SCNNode(geometry: pantalla)
+            pantallaPlanaNodo.name = "pantallaPlanaNodo"
             //identificar en donde se ha tocado el currentFrame
             var traduccion = matrix_identity_float4x4
             //definir un metro alejado del dispositivo
@@ -153,6 +163,11 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             self.sceneView.scene.rootNode.addChildNode(pantallaPlanaNodo)
             
             hasVid = true
+            
+            for coso in self.sceneView.scene.rootNode.childNodes{
+                print(coso)
+            }
+            
         }else{
             self.sceneView.scene.rootNode.childNode(withName: "pantallaPlanaNodo", recursively: false)?.removeFromParentNode()
             

@@ -21,6 +21,7 @@ class SalonViewController: UIViewController {
     var horaCierre = ""
     var fotografia = ""
     var foto360 = ""
+    var video = ""
     
     @IBOutlet weak var descripcionlb: UILabel!
     @IBOutlet weak var locacionlb: UILabel!
@@ -81,6 +82,7 @@ class SalonViewController: UIViewController {
         let sigVista = segue.destination as! ViewControllerAR
         print("foto"+foto360)
         sigVista.ruta = foto360
+        sigVista.videoadd = video
     }
     
 
