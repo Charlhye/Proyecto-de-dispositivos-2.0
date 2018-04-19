@@ -28,16 +28,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="Menú principal"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9fU-LN-g5S">
-                                <rect key="frame" x="50" y="318" width="275" height="48"/>
-                                <color key="backgroundColor" red="0.10908058780117913" green="0.48570941996668893" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xs9-o0-t3A">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Open Innovation Lab" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiD-CJ-bES">
+                                <rect key="frame" x="109" y="115" width="158" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xs9-o0-t3A">
                                 <rect key="frame" x="50" y="222" width="275" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.13539548557848757" green="0.46195832025141514" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbG-Ul-BIW">
-                                <rect key="frame" x="132" y="231" width="111" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbG-Ul-BIW">
+                                <rect key="frame" x="50" y="229" width="275" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Lista de salones">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -45,8 +50,14 @@
                                     <segue destination="1xS-Fk-vJe" kind="show" id="1dW-iw-Sjq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycs-ui-E2k">
-                                <rect key="frame" x="132" y="327" width="126" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fU-LN-g5S">
+                                <rect key="frame" x="50" y="318" width="275" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.10908058780117913" green="0.48570941996668893" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycs-ui-E2k">
+                                <rect key="frame" x="51" y="318" width="275" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title="Lista de proyectos">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,12 +66,19 @@
                                     <segue destination="EzR-g8-LKy" kind="show" id="P9q-RE-VuZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Innovation Lab" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiD-CJ-bES">
-                                <rect key="frame" x="108.5" y="115" width="158" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dwK-YF-Mko">
+                                <rect key="frame" x="51" y="413" width="275" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1353954856" green="0.4619583203" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9E-WL-H7x">
+                                <rect key="frame" x="51" y="418" width="268" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="¿Que hay en mi salón?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWb-EC-rCt">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -74,29 +92,13 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Xs9-o0-t3A" firstAttribute="trailing" secondItem="9fU-LN-g5S" secondAttribute="trailing" id="7ma-5R-nvX"/>
-                            <constraint firstItem="9fU-LN-g5S" firstAttribute="centerY" secondItem="ycs-ui-E2k" secondAttribute="centerY" id="AQv-1h-Dwj"/>
-                            <constraint firstItem="Xs9-o0-t3A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="B5o-BY-390"/>
-                            <constraint firstItem="zbG-Ul-BIW" firstAttribute="leading" secondItem="ycs-ui-E2k" secondAttribute="leading" id="JiE-K9-vbz"/>
-                            <constraint firstItem="Xs9-o0-t3A" firstAttribute="centerX" secondItem="zbG-Ul-BIW" secondAttribute="centerX" id="Kt7-0h-kmd"/>
-                            <constraint firstItem="zbG-Ul-BIW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="167" id="LV5-Hl-st4"/>
-                            <constraint firstItem="zbG-Ul-BIW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OEM-gz-PyU"/>
-                            <constraint firstItem="ycs-ui-E2k" firstAttribute="top" secondItem="Xs9-o0-t3A" secondAttribute="bottom" constant="57" id="OFW-3Q-QiN"/>
-                            <constraint firstItem="tiD-CJ-bES" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OtV-El-kfN"/>
-                            <constraint firstItem="Xs9-o0-t3A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="158" id="SEb-yl-cuQ"/>
-                            <constraint firstItem="Xs9-o0-t3A" firstAttribute="centerY" secondItem="zbG-Ul-BIW" secondAttribute="centerY" id="f0h-Kh-the"/>
-                            <constraint firstItem="tiD-CJ-bES" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="51" id="j5O-hd-6g5"/>
-                            <constraint firstItem="9fU-LN-g5S" firstAttribute="top" secondItem="Xs9-o0-t3A" secondAttribute="bottom" constant="48" id="jdV-OS-VPe"/>
-                            <constraint firstItem="Xs9-o0-t3A" firstAttribute="leading" secondItem="9fU-LN-g5S" secondAttribute="leading" id="wD9-de-TwO"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="LYu-m1-tVb" userLabel="Menú principal"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-258" y="197"/>
+            <point key="canvasLocation" x="-258.39999999999998" y="196.55172413793105"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6YW-Cb-fln">
@@ -141,7 +143,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Keu-vh-Tna" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="-174"/>
+            <point key="canvasLocation" x="943" y="-653"/>
         </scene>
         <!--Salon View Controller-->
         <scene sceneID="piz-wM-nk0">
@@ -224,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1T-f8-eS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1777" y="-174"/>
+            <point key="canvasLocation" x="1756" y="-653"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="shO-sk-Y2L">
@@ -311,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4kE-nF-Q8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="696.7016491754124"/>
+            <point key="canvasLocation" x="943" y="218"/>
         </scene>
         <!--Listas-->
         <scene sceneID="1rL-49-b5H">
@@ -340,7 +342,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2YK-qK-TjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1777" y="697"/>
+            <point key="canvasLocation" x="1756" y="218"/>
         </scene>
         <!--Second-->
         <scene sceneID="Ot3-Vo-cGE">
@@ -351,7 +353,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plano detectado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANX-Lo-1WZ">
-                                <rect key="frame" x="88.5" y="60" width="199" height="34.5"/>
+                                <rect key="frame" x="88" y="60" width="199" height="34.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -427,7 +429,7 @@
                     </connections>
                 </rotationGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2636" y="-174.06296851574214"/>
+            <point key="canvasLocation" x="2615" y="-653"/>
         </scene>
         <!--Listas-->
         <scene sceneID="Rdm-rH-q9N">
@@ -456,7 +458,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxk-hH-fCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2636" y="697"/>
+            <point key="canvasLocation" x="2615" y="218"/>
         </scene>
     </scenes>
     <resources>
