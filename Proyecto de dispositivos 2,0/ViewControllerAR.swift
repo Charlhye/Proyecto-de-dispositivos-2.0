@@ -13,6 +13,10 @@ import ARKit
 class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     
     var ruta = ""
+    
+    var hasPortal = false
+    var hasTresde = false
+    var hasVid = false
 
     //etiqueta para indicar al usuario que el plano horizontal ha sido detectadi
     @IBOutlet weak var planeDetected: UILabel!
@@ -36,96 +40,124 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
         addPortal()
     }
     
+    var dondeLoPuso: simd_float4x4?
+    
     func addPortal() {
-        let portalScene = SCNScene(named:"escenes.sncassets/Portal.scn")
+        if !hasPortal {
+            let portalScene = SCNScene(named:"escenes.sncassets/Portal.scn")
+            
+            let portalNode = portalScene?.rootNode.childNode(withName: "Portal", recursively: false)
+            
+            
+            
+            guard let currentFrame = self.sceneView.session.currentFrame else {return}
+            dondeLoPuso = currentFrame.camera.transform
+            
+            var traduccion = matrix_identity_float4x4
+            //definir un metro alejado del dispositivo
+            traduccion.columns.2.y = -1.0
+            portalNode?.simdTransform = matrix_multiply(dondeLoPuso!, traduccion)
+            
+//            let planeXposition = 0
+//            let planeYposition = -1
+//            let planeZposition = 0
+//            portalNode?.position = SCNVector3(planeXposition,planeYposition,planeZposition)
+            
+            var img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/1.png")!))
+            portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[0].diffuse.contents = img
+            
+            img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/2.png")!))
+            portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[1].diffuse.contents = img
+            
+            img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/3.png")!))
+            portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[2].diffuse.contents = img
+            
+            img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/4.png")!))
+            portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[3].diffuse.contents = img
+            
+            img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/5.png")!))
+            portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[4].diffuse.contents = img
+            
+            img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/6.png")!))
+            portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[5].diffuse.contents = img
+            
+            self.sceneView.scene.rootNode.addChildNode(portalNode!)
+            hasPortal = true
+        }
        
-        let portalNode = portalScene?.rootNode.childNode(withName: "Portal", recursively: false)
-        
-        let planeXposition = 0
-        let planeYposition = -1
-        let planeZposition = 0
-        portalNode?.position = SCNVector3(planeXposition,planeYposition,planeZposition)
-        
-        var img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/1.png")!))
-        portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[0].diffuse.contents = img
-        
-        img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/2.png")!))
-        portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[1].diffuse.contents = img
-        
-        img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/3.png")!))
-        portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[2].diffuse.contents = img
-        
-        img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/4.png")!))
-        portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[3].diffuse.contents = img
-        
-        img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/5.png")!))
-        portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[4].diffuse.contents = img
-        
-        img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/6.png")!))
-        portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[5].diffuse.contents = img
-        
-        self.sceneView.scene.rootNode.addChildNode(portalNode!)
     }
     
     @IBAction func tresde(_ sender: UIButton) {
-        guard let currentFrame = self.sceneView.session.currentFrame else {return}
+        if !hasTresde && hasPortal {
+            let portalScene2 = SCNScene(named:"art.scnassets/ship.scn")
+            
+            let portalNode2 = portalScene2?.rootNode.childNode(withName: "ship", recursively: false)
+            
+            portalNode2?.simdTransform = dondeLoPuso!
+            
+//            let planeXposition2 = 0
+//            let planeYposition2 = 0
+//            let planeZposition2 = 0
+//            portalNode2?.position = SCNVector3(planeXposition2,planeYposition2,planeZposition2)
+            self.sceneView.scene.rootNode.addChildNode(portalNode2!)
+        }
         
-        let portalScene2 = SCNScene(named:"art.scnassets/ship.scn")
-        
-        let portalNode2 = portalScene2?.rootNode.childNode(withName: "ship", recursively: false)
-        
-        let planeXposition2 = 0
-        let planeYposition2 = 0
-        let planeZposition2 = 0
-        portalNode2?.position = SCNVector3(planeXposition2,planeYposition2,planeZposition2)
-        self.sceneView.scene.rootNode.addChildNode(portalNode2!)
     }
     
     @IBAction func video(_ sender: UIButton) {
-        //currentFrame es la imagen actual de la camara
-        guard let currentFrame = self.sceneView.session.currentFrame else {return}
-        
-        //let path = Bundle.main.path(forResource: "CheeziPuffs", ofType: "mov")
-        //let url = URL(fileURLWithPath: path!)
-        
-        let moviePath = "http://ebookfrenzy.com/ios_book/movie/movie.mov"
-        let url = URL(string: moviePath)
-        let player = AVPlayer(url: url!)
-        player.volume = 0.5
-        print(player.isMuted)
-        
-        // crear un nodo capaz de reporducir un video
-        let videoNodo = SKVideoNode(url: url!)
-        //let videoNodo = SKVideoNode(fileNamed: "CheeziPuffs.mov")
-        //let videoNodo = SKVideoNode(avPlayer: player)
-        videoNodo.play() //ejecutar play al momento de presentarse
-        
-        //crear una escena sprite kit, los parametros estan en pixeles
-        let spriteKitEscene =  SKScene(size: CGSize(width: 640, height: 480))
-        spriteKitEscene.addChild(videoNodo)
-        
-        //colocar el videoNodo en el centro de la escena tipo SpriteKit
-        videoNodo.position = CGPoint(x: spriteKitEscene.size.width/2, y: spriteKitEscene.size.height/2)
-        videoNodo.size = spriteKitEscene.size
-        
-        //crear una pantalla 4/3, los parametros son metros
-        let pantalla = SCNPlane(width: 1.0, height: 0.75)
-        
-        //pantalla.firstMaterial?.diffuse.contents = UIColor.blue
-        //modificar el material del plano
-        pantalla.firstMaterial?.diffuse.contents = spriteKitEscene
-        //permitir ver el video por ambos lados
-        pantalla.firstMaterial?.isDoubleSided = true
-        
-        let pantallaPlanaNodo = SCNNode(geometry: pantalla)
-        //identificar en donde se ha tocado el currentFrame
-        var traduccion = matrix_identity_float4x4
-        //definir un metro alejado del dispositivo
-        traduccion.columns.3.z = -1.0
-        pantallaPlanaNodo.simdTransform = matrix_multiply(currentFrame.camera.transform, traduccion)
-        
-        pantallaPlanaNodo.eulerAngles = SCNVector3(Double.pi, 0, 0)
-        self.sceneView.scene.rootNode.addChildNode(pantallaPlanaNodo)
+        if !hasVid && hasPortal {
+            //currentFrame es la imagen actual de la camara
+            //guard let currentFrame = self.sceneView.session.currentFrame else {return}
+            let currentFrame = dondeLoPuso!
+            
+            //let path = Bundle.main.path(forResource: "CheeziPuffs", ofType: "mov")
+            //let url = URL(fileURLWithPath: path!)
+            
+            let moviePath = "http://ebookfrenzy.com/ios_book/movie/movie.mov"
+            let url = URL(string: moviePath)
+            let player = AVPlayer(url: url!)
+            player.volume = 0.5
+            print(player.isMuted)
+            
+            // crear un nodo capaz de reporducir un video
+            let videoNodo = SKVideoNode(url: url!)
+            //let videoNodo = SKVideoNode(fileNamed: "CheeziPuffs.mov")
+            //let videoNodo = SKVideoNode(avPlayer: player)
+            videoNodo.play() //ejecutar play al momento de presentarse
+            
+            //crear una escena sprite kit, los parametros estan en pixeles
+            let spriteKitEscene =  SKScene(size: CGSize(width: 640, height: 480))
+            spriteKitEscene.addChild(videoNodo)
+            
+            //colocar el videoNodo en el centro de la escena tipo SpriteKit
+            videoNodo.position = CGPoint(x: spriteKitEscene.size.width/2, y: spriteKitEscene.size.height/2)
+            videoNodo.size = spriteKitEscene.size
+            
+            //crear una pantalla 4/3, los parametros son metros
+            let pantalla = SCNPlane(width: 1.0, height: 0.75)
+            
+            //pantalla.firstMaterial?.diffuse.contents = UIColor.blue
+            //modificar el material del plano
+            pantalla.firstMaterial?.diffuse.contents = spriteKitEscene
+            //permitir ver el video por ambos lados
+            pantalla.firstMaterial?.isDoubleSided = true
+            
+            let pantallaPlanaNodo = SCNNode(geometry: pantalla)
+            //identificar en donde se ha tocado el currentFrame
+            var traduccion = matrix_identity_float4x4
+            //definir un metro alejado del dispositivo
+            traduccion.columns.3.z = -1.0
+            pantallaPlanaNodo.simdTransform = matrix_multiply(currentFrame, traduccion)
+            
+            pantallaPlanaNodo.eulerAngles = SCNVector3(Double.pi, 0, 0)
+            self.sceneView.scene.rootNode.addChildNode(pantallaPlanaNodo)
+            
+            hasVid = true
+        }else{
+            self.sceneView.scene.rootNode.childNode(withName: "pantallaPlanaNodo", recursively: false)?.removeFromParentNode()
+            
+            hasVid = false
+        }
     }
     
     override func didReceiveMemoryWarning() {
