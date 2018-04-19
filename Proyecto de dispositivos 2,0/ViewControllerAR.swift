@@ -27,10 +27,14 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //mostrar el origen y los puntos detectados
-        self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
-        //indicar la detección del plano
-        self.configuration.planeDetection = .horizontal
+        
+        
+//        //mostrar el origen y los puntos detectados
+//        self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
+//        //indicar la detección del plano
+//
+//        //self.configuration.planeDetection = .horizontal
+//
         self.sceneView.session.run(configuration)
         self.sceneView.delegate = self
         //administrador de gestos para identificar el tap sobre el plano horizontal
@@ -183,6 +187,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     //esta funcion indica al delegado que se ha agregado un nuevo nodo en la escena
     /* para mayor detalle https://developer.apple.com/documentation/arkit/arscnview/providing_3d_virtual_content_with_scenekit
      */
+    
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard anchor is ARPlaneAnchor else {return} //se agrego un plano
         //ejecución asincrona en donde se modifica la etiqueta de plano detectado
