@@ -34,6 +34,7 @@ class SalonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.endIgnoringInteractionEvents()
         print(fotografia)
         
         descripcionlb.text! = descripcion
