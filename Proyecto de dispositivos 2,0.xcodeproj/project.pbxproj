@@ -13,6 +13,8 @@
 		39BD80402075494C001BF154 /* TableViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BD803F2075494C001BF154 /* TableViewController3.swift */; };
 		9C661BC4206C44AA000BD374 /* TableViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661BC3206C44AA000BD374 /* TableViewController1.swift */; };
 		9C661BC6206C4520000BD374 /* TableViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661BC5206C4520000BD374 /* TableViewController2.swift */; };
+		F24E79AF2098D8230067003D /* TutorialARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E79AE2098D8230067003D /* TutorialARViewController.swift */; };
+		F24E79B1209915160067003D /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E79B0209915160067003D /* MapaViewController.swift */; };
 		F2513CEF208D91020091BDC8 /* ViewControllerML.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2513CEE208D91020091BDC8 /* ViewControllerML.swift */; };
 		F2513CF1208D958A0091BDC8 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F2513CF0208D958A0091BDC8 /* Resnet50.mlmodel */; };
 		F2588EA8206D972B0077D8E5 /* SalonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2588EA7206D972B0077D8E5 /* SalonViewController.swift */; };
@@ -38,6 +40,8 @@
 		39BD803F2075494C001BF154 /* TableViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController3.swift; sourceTree = "<group>"; };
 		9C661BC3206C44AA000BD374 /* TableViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController1.swift; sourceTree = "<group>"; };
 		9C661BC5206C4520000BD374 /* TableViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController2.swift; sourceTree = "<group>"; };
+		F24E79AE2098D8230067003D /* TutorialARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialARViewController.swift; sourceTree = "<group>"; };
+		F24E79B0209915160067003D /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		F2513CEE208D91020091BDC8 /* ViewControllerML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerML.swift; sourceTree = "<group>"; };
 		F2513CF0208D958A0091BDC8 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		F2588EA7206D972B0077D8E5 /* SalonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				F2F0D080207351AD00E687DC /* ProyectosViewController.swift */,
 				F2A794EB2074986F003BD01E /* Usuario.swift */,
 				F2513CEE208D91020091BDC8 /* ViewControllerML.swift */,
+				F24E79AE2098D8230067003D /* TutorialARViewController.swift */,
+				F24E79B0209915160067003D /* MapaViewController.swift */,
 			);
 			path = "Proyecto de dispositivos 2,0";
 			sourceTree = "<group>";
@@ -194,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F24E79AF2098D8230067003D /* TutorialARViewController.swift in Sources */,
 				F2588EA8206D972B0077D8E5 /* SalonViewController.swift in Sources */,
 				F2B6DF35206B1AF000D3E8E8 /* ViewControllerAR.swift in Sources */,
 				F2B6DF37206B28ED00D3E8E8 /* ViewController2.swift in Sources */,
@@ -204,6 +211,7 @@
 				9C661BC4206C44AA000BD374 /* TableViewController1.swift in Sources */,
 				F2B6DEFF206AF97F00D3E8E8 /* AppDelegate.swift in Sources */,
 				F2F0D081207351AD00E687DC /* ProyectosViewController.swift in Sources */,
+				F24E79B1209915160067003D /* MapaViewController.swift in Sources */,
 				F2513CF1208D958A0091BDC8 /* Resnet50.mlmodel in Sources */,
 				39BD80402075494C001BF154 /* TableViewController3.swift in Sources */,
 			);

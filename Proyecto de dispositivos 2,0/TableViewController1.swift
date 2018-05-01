@@ -10,7 +10,8 @@ import UIKit
 
 class TableViewController1: UITableViewController, UISearchResultsUpdating {
     
-    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var addItemView: UIView!
     
     var stringBusqueda = ""
     var datosFiltrados = [Any]()
@@ -52,9 +53,8 @@ class TableViewController1: UITableViewController, UISearchResultsUpdating {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        activityIndicator.stopAnimating()
+        //activityIndicator.stopAnimating()
+        //activityView.isHidden = true
         UIApplication.shared.endIgnoringInteractionEvents()
 
 
@@ -113,12 +113,9 @@ class TableViewController1: UITableViewController, UISearchResultsUpdating {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        tableView.tableFooterView = activityIndicator
-                
-        activityIndicator.center = (tableView.tableFooterView?.center)!
         
-        activityIndicator.startAnimating()
-
+        //activityIndicator.startAnimating()
+        //animateIn()
         
         UIApplication.shared.beginIgnoringInteractionEvents()
         
@@ -154,7 +151,14 @@ class TableViewController1: UITableViewController, UISearchResultsUpdating {
         let horaCierre:String = objetoMarca["horaCierre"] as! String
         let fotografia:String = objetoMarca["fotografia"] as! String
         let foto360:String = objetoMarca["foto360"] as! String
-        let video:String = objetoMarca["video"] as! String
+        
+        let maquinas = objetoMarca["maquinaria"] as! [Any]
+        var maquinaria : [SalonViewController.maquina] = [SalonViewController.maquina]()
+        for i in 0..<maquinas.count {
+            let maquinon = maquinas[i] as! [String:Any]
+            let maquinita = SalonViewController.maquina(nombre: maquinon["maquinariaNombre"] as! String, marca: maquinon["maquinariaMarca"] as! String, modelo: maquinon["maquinariaModelo"] as! String, tresde: maquinon["tresde"] as! String, video: maquinon["video"] as! String)
+            maquinaria.append(maquinita)
+        }
         
         sigVista.nombre = nombre
         sigVista.locacionPlanta = locacionPlanta
@@ -167,9 +171,8 @@ class TableViewController1: UITableViewController, UISearchResultsUpdating {
         sigVista.horaCierre = horaCierre
         sigVista.fotografia = fotografia
         sigVista.foto360 = foto360
-        sigVista.video = video
+        sigVista.maquinaria = maquinaria
         
         self.navigationController?.pushViewController(sigVista, animated: true)
     }
-    
 }

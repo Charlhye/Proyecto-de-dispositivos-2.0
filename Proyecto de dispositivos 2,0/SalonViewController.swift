@@ -8,7 +8,15 @@
 
 import UIKit
 
-class SalonViewController: UIViewController {
+class SalonViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    struct maquina{
+        var nombre: String
+        var marca : String
+        var modelo: String
+        var tresde: String
+        var video : String
+    }
     
     var nombre = ""
     var locacionPlanta = ""
@@ -21,7 +29,7 @@ class SalonViewController: UIViewController {
     var horaCierre = ""
     var fotografia = ""
     var foto360 = ""
-    var video = ""
+    var maquinaria: [maquina] = [maquina]()
     
     @IBOutlet weak var descripcionlb: UILabel!
     @IBOutlet weak var locacionlb: UILabel!
@@ -30,18 +38,18 @@ class SalonViewController: UIViewController {
     @IBOutlet weak var horaCilb: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var maquinasCb: UIPickerView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.endIgnoringInteractionEvents()
-        print(fotografia)
         
         descripcionlb.text! = descripcion
-        locacionlb.text! = "\(locacionPlanta)\(locacionSalon)"
-        responsablelb.text! = "\(responsableNombre)\n\(responsableTelefono)\n\(responsableCorreo)"
-        horaAplb.text! = "\(horaApertura)"
-        horaCilb.text! = "\(horaCierre)"
+        locacionlb.text! = "Salon: \(locacionPlanta)\(locacionSalon)"
+        responsablelb.text! = "Contacto\n\(responsableNombre)\n\(responsableTelefono)\n\(responsableCorreo)"
+        horaAplb.text! = "Apertura: \(horaApertura)"
+        horaCilb.text! = "Cierre: \(horaCierre)"
         
         
         
@@ -52,6 +60,9 @@ class SalonViewController: UIViewController {
             img!
 
         // Do any additional setup after loading the view.
+        
+        self.maquinasCb.delegate = self
+        self.maquinasCb.dataSource = self
     }
 
     @IBAction func compartir(_ sender: Any) {
@@ -70,7 +81,23 @@ class SalonViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return maquinaria.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return maquinaria[row].nombre+" "+maquinaria[row].marca+" "+maquinaria[row].modelo
+    }
+    
+    var selectedRow = 0
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedRow = row
+    }
     
 
     
@@ -80,10 +107,9 @@ class SalonViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let sigVista = segue.destination as! ViewControllerAR
-        print("foto"+foto360)
+        let sigVista = segue.destination as! TutorialARViewController
         sigVista.ruta = foto360
-        sigVista.videoadd = video
+        sigVista.videoadd = maquinaria[selectedRow].video
     }
     
 
