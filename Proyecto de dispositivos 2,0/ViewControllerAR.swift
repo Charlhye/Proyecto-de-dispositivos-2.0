@@ -12,6 +12,7 @@ import ARKit
 
 class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     
+    @IBOutlet weak var activityInd: UIActivityIndicatorView!
     var ruta = ""
     var videoadd = ""
     
@@ -27,17 +28,10 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-//        //mostrar el origen y los puntos detectados
-//        self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
-//        //indicar la detección del plano
-//
-//        //self.configuration.planeDetection = .horizontal
-//
+
         self.sceneView.session.run(configuration)
         self.sceneView.delegate = self
-        //administrador de gestos para identificar el tap sobre el plano horizontal
+
     }
     
     //cargar el portal
@@ -48,6 +42,9 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     var dondeLoPuso: simd_float4x4?
     
     func addPortal() {
+        activityInd.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
         if !hasPortal {
             let portalScene = SCNScene(named:"escenes.sncassets/Portal.scn")
             
@@ -91,10 +88,13 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             
             hasPortal = false
         }
-       
+        UIApplication.shared.endIgnoringInteractionEvents()
     }
     
     @IBAction func tresde(_ sender: UIButton) {
+        activityInd.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
         if !hasTresde && hasPortal {
             let portalScene2 = SCNScene(named:"art.scnassets/ship.scn")
             
@@ -114,17 +114,15 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             
             hasTresde = false
         }
-        
+        UIApplication.shared.endIgnoringInteractionEvents()
     }
     
     @IBAction func video(_ sender: UIButton) {
+        activityInd.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
         if !hasVid && hasPortal {
-            //currentFrame es la imagen actual de la camara
-            //guard let currentFrame = self.sceneView.session.currentFrame else {return}
             let currentFrame = dondeLoPuso!
-            
-            //let path = Bundle.main.path(forResource: "CheeziPuffs", ofType: "mov")
-            //let url = URL(fileURLWithPath: path!)
             
             let moviePath = videoadd
             let url = URL(string: moviePath)
@@ -132,34 +130,26 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             player.volume = 0.5
             print(player.isMuted)
             
-            // crear un nodo capaz de reporducir un video
             let videoNodo = SKVideoNode(url: url!)
-            //let videoNodo = SKVideoNode(fileNamed: "CheeziPuffs.mov")
-            //let videoNodo = SKVideoNode(avPlayer: player)
-            videoNodo.play() //ejecutar play al momento de presentarse
+
+            videoNodo.play()
             
-            //crear una escena sprite kit, los parametros estan en pixeles
             let spriteKitEscene =  SKScene(size: CGSize(width: 640, height: 480))
             spriteKitEscene.addChild(videoNodo)
             
-            //colocar el videoNodo en el centro de la escena tipo SpriteKit
             videoNodo.position = CGPoint(x: spriteKitEscene.size.width/2, y: spriteKitEscene.size.height/2)
             videoNodo.size = spriteKitEscene.size
             
-            //crear una pantalla 4/3, los parametros son metros
             let pantalla = SCNPlane(width: 1.0, height: 0.75)
             
-            //pantalla.firstMaterial?.diffuse.contents = UIColor.blue
-            //modificar el material del plano
             pantalla.firstMaterial?.diffuse.contents = spriteKitEscene
-            //permitir ver el video por ambos lados
             pantalla.firstMaterial?.isDoubleSided = true
             
             let pantallaPlanaNodo = SCNNode(geometry: pantalla)
             pantallaPlanaNodo.name = "pantallaPlanaNodo"
-            //identificar en donde se ha tocado el currentFrame
+
             var traduccion = matrix_identity_float4x4
-            //definir un metro alejado del dispositivo
+
             traduccion.columns.3.z = -1.0
             pantallaPlanaNodo.simdTransform = matrix_multiply(currentFrame, traduccion)
             
@@ -176,7 +166,8 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             self.sceneView.scene.rootNode.childNode(withName: "pantallaPlanaNodo", recursively: false)?.removeFromParentNode()
             
             hasVid = false
-        }
+        }        
+        UIApplication.shared.endIgnoringInteractionEvents()
     }
     
     override func didReceiveMemoryWarning() {
@@ -189,14 +180,18 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
      */
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        guard anchor is ARPlaneAnchor else {return} //se agrego un plano
-        //ejecución asincrona en donde se modifica la etiqueta de plano detectado
-        DispatchQueue.main.async {
-            self.planeDetected.isHidden = false
-            print("Plano detectado")
-        }
-        //espera 3 segundos antes de desaparecer
-        DispatchQueue.main.asyncAfter(deadline: .now()+3){self.planeDetected.isHidden = true}
+//        guard anchor is ARPlaneAnchor else {return} //se agrego un plano
+        
+        activityInd.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+        
+//        //ejecución asincrona en donde se modifica la etiqueta de plano detectado
+//        DispatchQueue.main.async {
+//            self.planeDetected.isHidden = false
+//            print("Plano detectado")
+//        }
+//        //espera 3 segundos antes de desaparecer
+//        DispatchQueue.main.asyncAfter(deadline: .now()+3){self.planeDetected.isHidden = true}
     }
     
     @IBAction func pinchGest(_ sender: UIPinchGestureRecognizer) {

@@ -8,10 +8,11 @@
 
 import UIKit
 
-class TableViewController1: UITableViewController, UISearchResultsUpdating {
+class TableViewController1: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var addItemView: UIView!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     var stringBusqueda = ""
     var datosFiltrados = [Any]()
@@ -56,6 +57,9 @@ class TableViewController1: UITableViewController, UISearchResultsUpdating {
         //activityIndicator.stopAnimating()
         //activityView.isHidden = true
         UIApplication.shared.endIgnoringInteractionEvents()
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
 
 
         let url = URL(string: direccion)
@@ -84,18 +88,18 @@ class TableViewController1: UITableViewController, UISearchResultsUpdating {
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
        return (datosFiltrados.count)
     }
     
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell = tableView.dequeueReusableCell(withIdentifier: "zelda", for: indexPath)
         
@@ -111,35 +115,37 @@ class TableViewController1: UITableViewController, UISearchResultsUpdating {
         
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //activityIndicator.startAnimating()
-        //animateIn()
+        activityIndicator.startAnimating()
         
         UIApplication.shared.beginIgnoringInteractionEvents()
         
         let indice = indexPath.row
         
-        seguechafa(indice)
+        
+        DispatchQueue.main.async {
+            self.seguechafa(indice)
+        }
+        
         
     }
     
     func seguechafa(_ indice: Int){
         var objetoMarca = [String:Any]()
-        
+
         let sigVista = self.storyboard?.instantiateViewController(withIdentifier: "Detalle") as! SalonViewController
-        
+
         if (self.searchController.isActive)
         {
             objetoMarca = datosFiltrados[indice] as! [String: Any]
-            
+
         }
         else
         {
             objetoMarca = nuevoArray![indice] as! [String: Any]
         }
-        
+
         let nombre:String = objetoMarca["nombre"] as! String
         let locacionPlanta:String = objetoMarca["locacionPlanta"] as! String
         let locacionSalon:String = objetoMarca["locacionSalon"] as! String
@@ -151,7 +157,7 @@ class TableViewController1: UITableViewController, UISearchResultsUpdating {
         let horaCierre:String = objetoMarca["horaCierre"] as! String
         let fotografia:String = objetoMarca["fotografia"] as! String
         let foto360:String = objetoMarca["foto360"] as! String
-        
+
         let maquinas = objetoMarca["maquinaria"] as! [Any]
         var maquinaria : [SalonViewController.maquina] = [SalonViewController.maquina]()
         for i in 0..<maquinas.count {
@@ -159,7 +165,7 @@ class TableViewController1: UITableViewController, UISearchResultsUpdating {
             let maquinita = SalonViewController.maquina(nombre: maquinon["maquinariaNombre"] as! String, marca: maquinon["maquinariaMarca"] as! String, modelo: maquinon["maquinariaModelo"] as! String, tresde: maquinon["tresde"] as! String, video: maquinon["video"] as! String)
             maquinaria.append(maquinita)
         }
-        
+
         sigVista.nombre = nombre
         sigVista.locacionPlanta = locacionPlanta
         sigVista.locacionSalon = locacionSalon
@@ -172,7 +178,8 @@ class TableViewController1: UITableViewController, UISearchResultsUpdating {
         sigVista.fotografia = fotografia
         sigVista.foto360 = foto360
         sigVista.maquinaria = maquinaria
-        
+
         self.navigationController?.pushViewController(sigVista, animated: true)
+        print("finito")
     }
 }

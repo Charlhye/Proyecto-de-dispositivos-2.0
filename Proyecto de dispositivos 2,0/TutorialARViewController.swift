@@ -13,9 +13,10 @@ class TutorialARViewController: UIViewController {
     var ruta = ""
     var videoadd = ""
 
+    @IBOutlet weak var activityInd: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UIApplication.shared.endIgnoringInteractionEvents()
         // Do any additional setup after loading the view.
     }
 
@@ -32,6 +33,11 @@ class TutorialARViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        activityInd.startAnimating()
+        
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
         let sigVista = segue.destination as! ViewControllerAR
         sigVista.ruta = ruta
         sigVista.videoadd = videoadd

@@ -40,6 +40,7 @@ class SalonViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     @IBOutlet weak var maquinasCb: UIPickerView!
     
+    @IBOutlet weak var activityInd: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,6 +108,9 @@ class SalonViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        activityInd.startAnimating()
+        
         let sigVista = segue.destination as! TutorialARViewController
         sigVista.ruta = foto360
         sigVista.videoadd = maquinaria[selectedRow].video
