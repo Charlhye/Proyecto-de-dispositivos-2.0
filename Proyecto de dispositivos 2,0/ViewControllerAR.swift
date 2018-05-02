@@ -29,6 +29,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        UIApplication.shared.endIgnoringInteractionEvents()
         self.sceneView.session.run(configuration)
         self.sceneView.delegate = self
 
@@ -36,65 +37,77 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     
     //cargar el portal
     @IBAction func portalHandler(_ sender: UIButton) {
-        addPortal()
+        
+        activityInd.startAnimating()
+        
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+        DispatchQueue.main.async {
+            self.addPortalsup()
+        }
+
     }
     
     var dondeLoPuso: simd_float4x4?
     
-    func addPortal() {
-        activityInd.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
-        
-        if !hasPortal {
+    func addPortalsup(){
+        if !self.hasPortal {
             let portalScene = SCNScene(named:"escenes.sncassets/Portal.scn")
             
             let portalNode = portalScene?.rootNode.childNode(withName: "Portal", recursively: false)
             
-            
-            
             guard let currentFrame = self.sceneView.session.currentFrame else {return}
-            dondeLoPuso = currentFrame.camera.transform
+            self.dondeLoPuso = currentFrame.camera.transform
             
             var traduccion = matrix_identity_float4x4
             //definir un metro alejado del dispositivo
             //traduccion.columns.3.z = -1.0
-            portalNode?.simdTransform = matrix_multiply(dondeLoPuso!, traduccion)
+            portalNode?.simdTransform = matrix_multiply(self.dondeLoPuso!, traduccion)
             portalNode?.eulerAngles = SCNVector3(0, Double.pi/2, 0)
             portalNode?.position.y = (portalNode?.position.y)! - 1
             
             
-            var img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/1.png")!))
+            var img = UIImage(data: try! Data(contentsOf: URL(string: "\(self.ruta)/1.png")!))
             portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[0].diffuse.contents = img
             
-            img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/2.png")!))
+            img = UIImage(data: try! Data(contentsOf: URL(string: "\(self.ruta)/2.png")!))
             portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[1].diffuse.contents = img
             
-            img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/3.png")!))
+            img = UIImage(data: try! Data(contentsOf: URL(string: "\(self.ruta)/3.png")!))
             portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[2].diffuse.contents = img
             
-            img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/4.png")!))
+            img = UIImage(data: try! Data(contentsOf: URL(string: "\(self.ruta)/4.png")!))
             portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[3].diffuse.contents = img
             
-            img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/5.png")!))
+            img = UIImage(data: try! Data(contentsOf: URL(string: "\(self.ruta)/5.png")!))
             portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[4].diffuse.contents = img
             
-            img = UIImage(data: try! Data(contentsOf: URL(string: "\(ruta)/6.png")!))
+            img = UIImage(data: try! Data(contentsOf: URL(string: "\(self.ruta)/6.png")!))
             portalNode?.childNode(withName: "box", recursively: false)?.geometry?.materials[5].diffuse.contents = img
             
             self.sceneView.scene.rootNode.addChildNode(portalNode!)
-            hasPortal = true
+            self.hasPortal = true
         } else {
             self.sceneView.scene.rootNode.childNode(withName: "Portal", recursively: false)?.removeFromParentNode()
             
-            hasPortal = false
+            self.hasPortal = false
         }
         UIApplication.shared.endIgnoringInteractionEvents()
+        activityInd.stopAnimating()
     }
     
     @IBAction func tresde(_ sender: UIButton) {
+        
         activityInd.startAnimating()
+        
         UIApplication.shared.beginIgnoringInteractionEvents()
         
+        DispatchQueue.main.async {
+            self.addtresde()
+        }
+    }
+    
+    func addtresde(){
         if !hasTresde && hasPortal {
             let portalScene2 = SCNScene(named:"art.scnassets/ship.scn")
             
@@ -115,12 +128,23 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             hasTresde = false
         }
         UIApplication.shared.endIgnoringInteractionEvents()
+        activityInd.stopAnimating()
     }
     
     @IBAction func video(_ sender: UIButton) {
+        
         activityInd.startAnimating()
+        
         UIApplication.shared.beginIgnoringInteractionEvents()
         
+        DispatchQueue.main.async {
+            self.addvideo()
+        }
+        
+       
+    }
+    
+    func addvideo(){
         if !hasVid && hasPortal {
             let currentFrame = dondeLoPuso!
             
@@ -131,7 +155,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             print(player.isMuted)
             
             let videoNodo = SKVideoNode(url: url!)
-
+            
             videoNodo.play()
             
             let spriteKitEscene =  SKScene(size: CGSize(width: 640, height: 480))
@@ -147,9 +171,9 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             
             let pantallaPlanaNodo = SCNNode(geometry: pantalla)
             pantallaPlanaNodo.name = "pantallaPlanaNodo"
-
+            
             var traduccion = matrix_identity_float4x4
-
+            
             traduccion.columns.3.z = -1.0
             pantallaPlanaNodo.simdTransform = matrix_multiply(currentFrame, traduccion)
             
@@ -166,8 +190,9 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             self.sceneView.scene.rootNode.childNode(withName: "pantallaPlanaNodo", recursively: false)?.removeFromParentNode()
             
             hasVid = false
-        }        
+        }
         UIApplication.shared.endIgnoringInteractionEvents()
+        activityInd.stopAnimating()
     }
     
     override func didReceiveMemoryWarning() {
@@ -175,24 +200,6 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    //esta funcion indica al delegado que se ha agregado un nuevo nodo en la escena
-    /* para mayor detalle https://developer.apple.com/documentation/arkit/arscnview/providing_3d_virtual_content_with_scenekit
-     */
-    
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-//        guard anchor is ARPlaneAnchor else {return} //se agrego un plano
-        
-        activityInd.stopAnimating()
-        UIApplication.shared.endIgnoringInteractionEvents()
-        
-//        //ejecución asincrona en donde se modifica la etiqueta de plano detectado
-//        DispatchQueue.main.async {
-//            self.planeDetected.isHidden = false
-//            print("Plano detectado")
-//        }
-//        //espera 3 segundos antes de desaparecer
-//        DispatchQueue.main.asyncAfter(deadline: .now()+3){self.planeDetected.isHidden = true}
-    }
     
     @IBAction func pinchGest(_ sender: UIPinchGestureRecognizer) {
         
