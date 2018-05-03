@@ -40,7 +40,9 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
         
         activityInd.startAnimating()
         
-        UIApplication.shared.beginIgnoringInteractionEvents()
+        //UIApplication.shared.beginIgnoringInteractionEvents()
+        
+        sleep(1)
         
         DispatchQueue.main.async {
             self.addPortalsup()
@@ -92,7 +94,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             
             self.hasPortal = false
         }
-        UIApplication.shared.endIgnoringInteractionEvents()
+        //UIApplication.shared.endIgnoringInteractionEvents()
         activityInd.stopAnimating()
     }
     

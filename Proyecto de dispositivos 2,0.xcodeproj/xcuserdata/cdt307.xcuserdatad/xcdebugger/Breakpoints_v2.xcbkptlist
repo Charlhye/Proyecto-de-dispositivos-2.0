@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Proyecto de dispositivos 2,0/ViewControllerAR.swift"
+            timestampString = "547077955.328688"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "video(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Proyecto de dispositivos 2,0/ViewControllerAR.swift"
+            timestampString = "547077955.329331"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "video(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Proyecto_de_dispositivos_2_0.ViewControllerAR.video(__ObjC.UIButton) -&gt; ()"
+                  moduleName = "Proyecto de dispositivos 2,0"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cdt307/Documents/GitHub/Proyecto-de-dispositivos-2.0/Proyecto%20de%20dispositivos%202,0/ViewControllerAR.swift"
+                  timestampString = "547077748.183681"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "280">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Proyecto_de_dispositivos_2_0.ViewControllerAR.video(__ObjC.UIButton) -&gt; ()"
+                  moduleName = "Proyecto de dispositivos 2,0"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cdt307/Documents/GitHub/Proyecto-de-dispositivos-2.0/Proyecto%20de%20dispositivos%202,0/ViewControllerAR.swift"
+                  timestampString = "547077748.185501"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Proyecto de dispositivos 2,0/ViewControllerAR.swift"
+            timestampString = "547077955.329807"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "video(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Proyecto de dispositivos 2,0/ViewControllerAR.swift"
+            timestampString = "547077955.3302751"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "portalHandler(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Proyecto de dispositivos 2,0/ViewControllerAR.swift"
+            timestampString = "547077955.330744"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "portalHandler(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Proyecto_de_dispositivos_2_0.ViewControllerAR.portalHandler(__ObjC.UIButton) -&gt; ()"
+                  moduleName = "Proyecto de dispositivos 2,0"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cdt307/Documents/GitHub/Proyecto-de-dispositivos-2.0/Proyecto%20de%20dispositivos%202,0/ViewControllerAR.swift"
+                  timestampString = "547077748.201638"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Proyecto_de_dispositivos_2_0.ViewControllerAR.portalHandler(__ObjC.UIButton) -&gt; ()"
+                  moduleName = "Proyecto de dispositivos 2,0"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cdt307/Documents/GitHub/Proyecto-de-dispositivos-2.0/Proyecto%20de%20dispositivos%202,0/ViewControllerAR.swift"
+                  timestampString = "547077748.203396"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Proyecto de dispositivos 2,0/ViewControllerAR.swift"
+            timestampString = "547077955.331214"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "portalHandler(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

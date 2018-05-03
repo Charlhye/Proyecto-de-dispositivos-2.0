@@ -179,6 +179,7 @@ class TableViewController1: UIViewController, UITableViewDataSource, UITableView
         sigVista.foto360 = foto360
         sigVista.maquinaria = maquinaria
 
+        activityIndicator.stopAnimating()
         self.navigationController?.pushViewController(sigVista, animated: true)
         print("finito")
     }
