@@ -40,7 +40,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
         
         activityInd.startAnimating()
         
-        //UIApplication.shared.beginIgnoringInteractionEvents()
+        UIApplication.shared.beginIgnoringInteractionEvents()
         
         sleep(1)
         
@@ -94,7 +94,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             
             self.hasPortal = false
         }
-        //UIApplication.shared.endIgnoringInteractionEvents()
+        UIApplication.shared.endIgnoringInteractionEvents()
         activityInd.stopAnimating()
     }
     
@@ -104,6 +104,8 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
         
         UIApplication.shared.beginIgnoringInteractionEvents()
         
+        sleep(1)
+        
         DispatchQueue.main.async {
             self.addtresde()
         }
@@ -111,6 +113,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     
     func addtresde(){
         if !hasTresde && hasPortal {
+            
             let portalScene2 = SCNScene(named:"art.scnassets/ship.scn")
             
             let portalNode2 = portalScene2?.rootNode.childNode(withName: "ship", recursively: false)
@@ -138,6 +141,8 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
         activityInd.startAnimating()
         
         UIApplication.shared.beginIgnoringInteractionEvents()
+        
+        sleep(1)
         
         DispatchQueue.main.async {
             self.addvideo()

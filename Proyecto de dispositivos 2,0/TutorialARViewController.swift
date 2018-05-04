@@ -41,6 +41,8 @@ class TutorialARViewController: UIViewController {
         let sigVista = segue.destination as! ViewControllerAR
         sigVista.ruta = ruta
         sigVista.videoadd = videoadd
+        
+        activityInd.stopAnimating()
     }
     
 

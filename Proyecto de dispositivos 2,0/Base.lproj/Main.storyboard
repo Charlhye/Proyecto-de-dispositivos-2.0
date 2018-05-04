@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9EM-Li-D8u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9EM-Li-D8u">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Menù principal-->
         <scene sceneID="tne-QT-ifu">
@@ -127,7 +122,7 @@
             </objects>
             <point key="canvasLocation" x="-1191" y="197"/>
         </scene>
-        <!--Table View Controller1-->
+        <!--Lista de salones-->
         <scene sceneID="Hgx-Gk-j8b">
             <objects>
                 <viewController id="x3g-zW-QsC" customClass="TableViewController1" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -163,6 +158,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="JDY-PE-iCx"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Lista de salones" id="hHI-Kp-SiG"/>
                     <connections>
                         <outlet property="activityIndicator" destination="wTk-yq-rsf" id="fxO-l3-P6V"/>
                         <outlet property="tableView" destination="9MN-Jy-ZKX" id="cZZ-Td-6SN"/>
@@ -172,7 +168,23 @@
             </objects>
             <point key="canvasLocation" x="942" y="-654"/>
         </scene>
-        <!--Salon View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="QaC-zu-KKi">
+            <objects>
+                <navigationController id="P8E-da-msQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v3K-RU-xvL">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Utf-bp-O2W" kind="relationship" relationship="rootViewController" id="1dG-su-oPm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wf5-09-kC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756" y="-1427"/>
+        </scene>
+        <!--Descripcion del salon-->
         <scene sceneID="piz-wM-nk0">
             <objects>
                 <viewController storyboardIdentifier="Detalle" id="Utf-bp-O2W" customClass="SalonViewController" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -181,7 +193,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDD-p9-If4">
-                                <rect key="frame" x="1" y="64" width="374" height="603"/>
+                                <rect key="frame" x="1" y="0.0" width="374" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descripcion" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sv8-el-zcy">
@@ -257,6 +269,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7oh-Q1-EOj"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Descripcion del salon" id="eF5-iN-uwH"/>
                     <connections>
                         <outlet property="activityInd" destination="8GH-Zq-wXH" id="ipC-LE-c9i"/>
                         <outlet property="descripcionlb" destination="Sv8-el-zcy" id="dN1-pA-jip"/>
@@ -272,7 +285,7 @@
             </objects>
             <point key="canvasLocation" x="1756" y="-653.52323838080963"/>
         </scene>
-        <!--View Controller-->
+        <!--Acerca de-->
         <scene sceneID="shO-sk-Y2L">
             <objects>
                 <viewController id="kuj-pH-4bl" sceneMemberID="viewController">
@@ -300,6 +313,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="AWR-V3-U3a"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Acerca de" id="KwD-XL-KiU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RW2-7N-4Ky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -360,7 +374,7 @@
             </objects>
             <point key="canvasLocation" x="943" y="218"/>
         </scene>
-        <!--Listas-->
+        <!--Lista de proyectos-->
         <scene sceneID="1rL-49-b5H">
             <objects>
                 <tableViewController storyboardIdentifier="Listaproys" id="QA9-mh-AR6" customClass="TableViewController2" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -384,6 +398,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Listas" id="HVS-bv-Wo2"/>
+                    <navigationItem key="navigationItem" title="Lista de proyectos" id="wPW-wf-Ipm"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2YK-qK-TjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -398,7 +413,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plano detectado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANX-Lo-1WZ">
-                                <rect key="frame" x="88" y="60" width="199" height="34.5"/>
+                                <rect key="frame" x="88" y="104" width="199" height="34.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -444,9 +459,14 @@
                                 <rect key="frame" x="310" y="606" width="49" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="atW-OH-Qg3">
-                                <rect key="frame" x="16" y="616" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2C-zr-MVn">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items/>
+                            </toolbar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9mO-jc-L0n">
+                                <rect key="frame" x="16" y="635" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -462,7 +482,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="3my-AB-r4f"/>
                     <connections>
-                        <outlet property="activityInd" destination="atW-OH-Qg3" id="Uiu-db-faU"/>
+                        <outlet property="activityInd" destination="9mO-jc-L0n" id="0HZ-bh-qbJ"/>
                         <outlet property="planeDetected" destination="ANX-Lo-1WZ" id="5ar-CK-sUX"/>
                         <outlet property="sceneView" destination="dvz-1f-c1g" id="wI9-h8-qj2"/>
                     </connections>
@@ -481,7 +501,7 @@
             </objects>
             <point key="canvasLocation" x="3417" y="-654"/>
         </scene>
-        <!--Listas-->
+        <!--Lista de materiales-->
         <scene sceneID="Rdm-rH-q9N">
             <objects>
                 <tableViewController storyboardIdentifier="ListaRecs" id="Vx4-xd-gUM" customClass="TableViewController3" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -505,12 +525,13 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Listas" id="l1x-6a-gpn"/>
+                    <navigationItem key="navigationItem" title="Lista de materiales" id="wsy-zZ-iB4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxk-hH-fCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2615" y="218"/>
         </scene>
-        <!--TutorialAR View Controller-->
+        <!--Tutorial-->
         <scene sceneID="Vqe-W2-Mgx">
             <objects>
                 <viewController id="duU-2K-XP4" customClass="TutorialARViewController" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -541,6 +562,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Dym-1A-r2e"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Tutorial" id="8cr-52-HFJ"/>
                     <connections>
                         <outlet property="activityInd" destination="BkP-6v-NRt" id="B4b-l3-iev"/>
                     </connections>
@@ -549,7 +571,7 @@
             </objects>
             <point key="canvasLocation" x="2613.5999999999999" y="-654.42278860569718"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial-->
         <scene sceneID="CbL-28-Zj4">
             <objects>
                 <viewController id="BEt-X7-jS5" sceneMemberID="viewController">
@@ -576,12 +598,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Y9a-Bm-3qs"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Tutorial" id="sOn-ms-tmk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GyM-YU-Wfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941.60000000000002" y="966.56671664167925"/>
+            <point key="canvasLocation" x="942" y="1685"/>
         </scene>
-        <!--View ControllerML-->
+        <!--Identificador de objetos-->
         <scene sceneID="bC2-ht-Qjk">
             <objects>
                 <viewController id="7v2-vW-eEX" customClass="ViewControllerML" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -593,6 +616,7 @@
                             <outletCollection property="gestureRecognizers" destination="5wo-Jd-oDf" appends="YES" id="1r0-q8-iQ2"/>
                         </connections>
                     </arscnView>
+                    <navigationItem key="navigationItem" title="Identificador de objetos" id="D2b-Gp-08D"/>
                     <connections>
                         <outlet property="sceneView" destination="bvC-ir-oA6" id="2wR-HM-esQ"/>
                     </connections>
@@ -604,9 +628,9 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1756" y="967"/>
+            <point key="canvasLocation" x="1756" y="1685"/>
         </scene>
-        <!--Title-->
+        <!--Mapa-->
         <scene sceneID="bZV-Qf-xMv">
             <objects>
                 <viewController id="vhG-bX-fmO" customClass="MapaViewController" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -626,7 +650,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="3Rs-HI-zEc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="L2x-CM-32G">
+                    <navigationItem key="navigationItem" title="Mapa" id="L2x-CM-32G">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="WEm-A9-Tyc">
                             <connections>
                                 <action selector="openInMaps:" destination="vhG-bX-fmO" id="dUr-4t-FvU"/>
@@ -640,6 +664,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7s-BY-qSB" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-258.39999999999998" y="1685.3073463268368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XJ4-Wh-qbQ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Za9-V7-UVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="YnV-Ye-H3D" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3ql-Un-sgG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QA9-mh-AR6" kind="relationship" relationship="rootViewController" id="rLb-xJ-UnF"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1756" y="967"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tF1-El-V7Q">
+            <objects>
+                <navigationController id="u52-UA-s2W" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6or-iQ-nyq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Vx4-xd-gUM" kind="relationship" relationship="rootViewController" id="LGA-CY-VPF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nYx-nH-AjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2614" y="967"/>
         </scene>
     </scenes>
     <resources>
