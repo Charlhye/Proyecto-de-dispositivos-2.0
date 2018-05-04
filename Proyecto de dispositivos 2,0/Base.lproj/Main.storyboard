@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Menù principal-->
+        <!--Menú principal-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,7 +97,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Menù principal" id="YcY-BX-Kou"/>
+                    <navigationItem key="navigationItem" title="Menú principal" id="YcY-BX-Kou"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -125,7 +125,7 @@
         <!--Lista de salones-->
         <scene sceneID="Hgx-Gk-j8b">
             <objects>
-                <viewController id="x3g-zW-QsC" customClass="TableViewController1" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListaNormal" id="x3g-zW-QsC" customClass="TableViewController1" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DCJ-l8-aPe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,7 +184,7 @@
             </objects>
             <point key="canvasLocation" x="1756" y="-1427"/>
         </scene>
-        <!--Descripcion del salon-->
+        <!--Descripción del salon-->
         <scene sceneID="piz-wM-nk0">
             <objects>
                 <viewController storyboardIdentifier="Detalle" id="Utf-bp-O2W" customClass="SalonViewController" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -269,7 +269,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7oh-Q1-EOj"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Descripcion del salon" id="eF5-iN-uwH"/>
+                    <navigationItem key="navigationItem" title="Descripción del salon" id="eF5-iN-uwH"/>
                     <connections>
                         <outlet property="activityInd" destination="8GH-Zq-wXH" id="ipC-LE-c9i"/>
                         <outlet property="descripcionlb" destination="Sv8-el-zcy" id="dN1-pA-jip"/>
@@ -427,36 +427,29 @@
                                 </connections>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zuy-Zo-etZ">
-                                <rect key="frame" x="311" y="480" width="46" height="41"/>
+                                <rect key="frame" x="311" y="448" width="46" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="portalHandler:" destination="VwX-bN-VRJ" eventType="touchUpInside" id="MZ0-j9-fZQ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gifRickAndMortyPortal.gif" translatesAutoresizingMaskIntoConstraints="NO" id="lkn-Ma-n73">
-                                <rect key="frame" x="310" y="480" width="49" height="41"/>
+                                <rect key="frame" x="310" y="448" width="49" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxy-Q0-06e">
-                                <rect key="frame" x="311" y="542" width="46" height="41"/>
+                                <rect key="frame" x="311" y="511" width="46" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="tresde:" destination="VwX-bN-VRJ" eventType="touchUpInside" id="QQw-kV-Oqu"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="3d.png" translatesAutoresizingMaskIntoConstraints="NO" id="xp7-IR-134">
-                                <rect key="frame" x="310" y="542" width="49" height="41"/>
+                                <rect key="frame" x="310" y="511" width="49" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixz-hy-j9s">
-                                <rect key="frame" x="311" y="606" width="46" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="video:" destination="VwX-bN-VRJ" eventType="touchUpInside" id="kjE-Qf-v5M"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="video-481821_960_720.png" translatesAutoresizingMaskIntoConstraints="NO" id="PFW-D1-43B">
-                                <rect key="frame" x="310" y="606" width="49" height="41"/>
+                                <rect key="frame" x="310" y="575" width="49" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2C-zr-MVn">
@@ -468,6 +461,13 @@
                                 <rect key="frame" x="16" y="635" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixz-hy-j9s">
+                                <rect key="frame" x="311" y="575" width="46" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="video:" destination="VwX-bN-VRJ" eventType="touchUpInside" id="kjE-Qf-v5M"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -501,7 +501,7 @@
             </objects>
             <point key="canvasLocation" x="3417" y="-654"/>
         </scene>
-        <!--Lista de materiales-->
+        <!--Lista de recursos-->
         <scene sceneID="Rdm-rH-q9N">
             <objects>
                 <tableViewController storyboardIdentifier="ListaRecs" id="Vx4-xd-gUM" customClass="TableViewController3" customModule="Proyecto_de_dispositivos_2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -525,7 +525,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Listas" id="l1x-6a-gpn"/>
-                    <navigationItem key="navigationItem" title="Lista de materiales" id="wsy-zZ-iB4"/>
+                    <navigationItem key="navigationItem" title="Lista de recursos" id="wsy-zZ-iB4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxk-hH-fCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

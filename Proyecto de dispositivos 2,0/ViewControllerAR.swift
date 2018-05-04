@@ -114,16 +114,41 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     func addtresde(){
         if !hasTresde && hasPortal {
             
+            
+//            let urlString = "http://199.233.252.89/201811/petitcats/iMacAK.scn"
+//            let url = URL.init(string: urlString)
+//            let request = URLRequest(url: url!)
+//            let session = URLSession.shared
+//            let downloadTask = session.downloadTask(with: request,
+//                                                    completionHandler: { (location:URL?, response:URLResponse?, error:Error?)
+//                                                        -> Void in
+//                                                        print("location:\(String(describing: location))")
+//                                                        let locationPath = location!.path
+//                                                        let documents:String = NSHomeDirectory() + "/Documents/iMacAK.scn"
+//                                                        let fileManager = FileManager.default
+//                                                        if (fileManager.fileExists(atPath: documents)){
+//                                                            try! fileManager.removeItem(atPath: documents)
+//                                                        }
+//                                                        try! fileManager.moveItem(atPath: locationPath, toPath: documents)
+//                                                        print("new location:\(documents)")
+//                                                        let scene = try SCNScene(url: URL(fileURLWithPath: documents), options: nil)
+//                                                        let nodess = scene.rootNode.childNodes[0]
+//                                                        self.sceneView.scene.rootNode.addChildNode(nodess)
+//
+//                                                        } as! (URL?, URLResponse?, Error?) -> Void)
+//            downloadTask.resume()
+            
+            
             let portalScene2 = SCNScene(named:"art.scnassets/ship.scn")
-            
+
             let portalNode2 = portalScene2?.rootNode.childNode(withName: "ship", recursively: false)
-            
+
             var traduccion = matrix_identity_float4x4
             portalNode2?.simdTransform = matrix_multiply(dondeLoPuso!, traduccion)
             portalNode2?.eulerAngles = SCNVector3(0, Double.pi/2, 0)
-            
+
             portalNode2?.position.y = (portalNode2?.position.y)! - 0.5
-            
+
             self.sceneView.scene.rootNode.addChildNode(portalNode2!)
             
             hasTresde = true
@@ -154,12 +179,9 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     func addvideo(){
         if !hasVid && hasPortal {
             let currentFrame = dondeLoPuso!
-            
+            print(videoadd)
             let moviePath = videoadd
             let url = URL(string: moviePath)
-            let player = AVPlayer(url: url!)
-            player.volume = 0.5
-            print(player.isMuted)
             
             let videoNodo = SKVideoNode(url: url!)
             
@@ -188,10 +210,6 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             self.sceneView.scene.rootNode.addChildNode(pantallaPlanaNodo)
             
             hasVid = true
-            
-            for coso in self.sceneView.scene.rootNode.childNodes{
-                print(coso)
-            }
             
         }else{
             self.sceneView.scene.rootNode.childNode(withName: "pantallaPlanaNodo", recursively: false)?.removeFromParentNode()
