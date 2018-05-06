@@ -55,7 +55,11 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     
     func addPortalsup(){
         if !self.hasPortal {
-            let portalScene = SCNScene(named:"escenes.sncassets/Portal.scn")
+            
+            let urlSelectedItem = "http://199.233.252.86/201811/theway2/Assets/Portal.scn"
+            let url = URL(string: urlSelectedItem)
+
+            let portalScene = try? SCNScene(url: url!, options: nil)
             
             let portalNode = portalScene?.rootNode.childNode(withName: "Portal", recursively: false)
             
@@ -90,6 +94,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             
             self.sceneView.scene.rootNode.addChildNode(portalNode!)
             self.hasPortal = true
+
         } else {
             self.sceneView.scene.rootNode.childNode(withName: "Portal", recursively: false)?.removeFromParentNode()
             
@@ -117,38 +122,20 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     func addtresde(){
         if !hasTresde && hasPortal {
             
-            do{
-                let urlSelectedItem = tresDeRuta
-                let url = URL(string: urlSelectedItem)
-                
-                let scene = try SCNScene(url: url!, options: nil)
-                let node = scene.rootNode.childNodes[0]
-                nombreTresDe = node.name!
+            let urlSelectedItem = tresDeRuta
+            let url = URL(string: urlSelectedItem)
+            
+            let scene = try? SCNScene(url: url!, options: nil)
+            let node = scene?.rootNode.childNodes[0]
+            nombreTresDe = (node?.name!)!
 
-                var traduccion = matrix_identity_float4x4
-                node.simdTransform = matrix_multiply(dondeLoPuso!, traduccion)
-                node.eulerAngles = SCNVector3(0, Double.pi/2, 0)
-                
-                node.position.y = (node.position.y) - 0.5
-                
-                self.sceneView.scene.rootNode.addChildNode(node)
-            }catch{
-                
-            }
+            var traduccion = matrix_identity_float4x4
+            node?.simdTransform = matrix_multiply(dondeLoPuso!, traduccion)
+            node?.eulerAngles = SCNVector3(0, Double.pi/2, 0)
             
+            node?.position.y = (node?.position.y)! - 0.5
             
-            
-//            let portalScene2 = SCNScene(named:"art.scnassets/ship.scn")
-//
-//            let portalNode2 = portalScene2?.rootNode.childNode(withName: "ship", recursively: false)
-//
-//            var traduccion = matrix_identity_float4x4
-//            node?.simdTransform = matrix_multiply(dondeLoPuso!, traduccion)
-//            node?.eulerAngles = SCNVector3(0, Double.pi/2, 0)
-//
-//            node?.position.y = (portalNode2?.position.y)! - 0.5
-//
-//            self.sceneView.scene.rootNode.addChildNode(portalNode2!)
+            self.sceneView.scene.rootNode.addChildNode(node!)
             
             hasTresde = true
         } else {

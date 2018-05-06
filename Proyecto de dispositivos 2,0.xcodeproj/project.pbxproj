@@ -18,7 +18,6 @@
 		F2513CEF208D91020091BDC8 /* ViewControllerML.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2513CEE208D91020091BDC8 /* ViewControllerML.swift */; };
 		F2513CF1208D958A0091BDC8 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F2513CF0208D958A0091BDC8 /* Resnet50.mlmodel */; };
 		F2588EA8206D972B0077D8E5 /* SalonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2588EA7206D972B0077D8E5 /* SalonViewController.swift */; };
-		F29A5A39206C8EEA002B0981 /* escenes.sncassets in Resources */ = {isa = PBXBuildFile; fileRef = F29A5A38206C8EEA002B0981 /* escenes.sncassets */; };
 		F2A794EC2074986F003BD01E /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A794EB2074986F003BD01E /* Usuario.swift */; };
 		F2B6DEFF206AF97F00D3E8E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6DEFE206AF97F00D3E8E8 /* AppDelegate.swift */; };
 		F2B6DF01206AF97F00D3E8E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6DF00206AF97F00D3E8E8 /* ViewController.swift */; };
@@ -44,7 +43,6 @@
 		F2513CEE208D91020091BDC8 /* ViewControllerML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerML.swift; sourceTree = "<group>"; };
 		F2513CF0208D958A0091BDC8 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		F2588EA7206D972B0077D8E5 /* SalonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonViewController.swift; sourceTree = "<group>"; };
-		F29A5A38206C8EEA002B0981 /* escenes.sncassets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = escenes.sncassets; sourceTree = "<group>"; };
 		F2A794EB2074986F003BD01E /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		F2B6DEFB206AF97F00D3E8E8 /* Proyecto de dispositivos 2,0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Proyecto de dispositivos 2,0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B6DEFE206AF97F00D3E8E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 				394A8C282087D11D006C93CF /* video-481821_960_720.png */,
 				394A8C262087D090006C93CF /* 3d.png */,
 				394A8C242087CE87006C93CF /* gifRickAndMortyPortal.gif */,
-				F29A5A38206C8EEA002B0981 /* escenes.sncassets */,
 				F2B6DF56206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg */,
 				F2B6DF10206B078B00D3E8E8 /* cedetec.jpg */,
 				F2B6DEFE206AF97F00D3E8E8 /* AppDelegate.swift */,
@@ -181,7 +178,6 @@
 				F2B6DF06206AF97F00D3E8E8 /* Assets.xcassets in Resources */,
 				F2B6DF57206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg in Resources */,
 				394A8C292087D11D006C93CF /* video-481821_960_720.png in Resources */,
-				F29A5A39206C8EEA002B0981 /* escenes.sncassets in Resources */,
 				F2B6DF04206AF97F00D3E8E8 /* Main.storyboard in Resources */,
 				394A8C272087D090006C93CF /* 3d.png in Resources */,
 				F2B6DF11206B078C00D3E8E8 /* cedetec.jpg in Resources */,
