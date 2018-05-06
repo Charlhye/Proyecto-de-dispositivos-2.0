@@ -15,6 +15,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var activityInd: UIActivityIndicatorView!
     var ruta = ""
     var videoadd = ""
+    var tresDeRuta = ""
     
     var hasPortal = false
     var hasTresde = false
@@ -111,49 +112,47 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
         }
     }
     
+    var nombreTresDe = ""
+    
     func addtresde(){
         if !hasTresde && hasPortal {
             
+            do{
+                let urlSelectedItem = tresDeRuta
+                let url = URL(string: urlSelectedItem)
+                
+                let scene = try SCNScene(url: url!, options: nil)
+                let node = scene.rootNode.childNodes[0]
+                nombreTresDe = node.name!
+
+                var traduccion = matrix_identity_float4x4
+                node.simdTransform = matrix_multiply(dondeLoPuso!, traduccion)
+                node.eulerAngles = SCNVector3(0, Double.pi/2, 0)
+                
+                node.position.y = (node.position.y) - 0.5
+                
+                self.sceneView.scene.rootNode.addChildNode(node)
+            }catch{
+                
+            }
             
-//            let urlString = "http://199.233.252.89/201811/petitcats/iMacAK.scn"
-//            let url = URL.init(string: urlString)
-//            let request = URLRequest(url: url!)
-//            let session = URLSession.shared
-//            let downloadTask = session.downloadTask(with: request,
-//                                                    completionHandler: { (location:URL?, response:URLResponse?, error:Error?)
-//                                                        -> Void in
-//                                                        print("location:\(String(describing: location))")
-//                                                        let locationPath = location!.path
-//                                                        let documents:String = NSHomeDirectory() + "/Documents/iMacAK.scn"
-//                                                        let fileManager = FileManager.default
-//                                                        if (fileManager.fileExists(atPath: documents)){
-//                                                            try! fileManager.removeItem(atPath: documents)
-//                                                        }
-//                                                        try! fileManager.moveItem(atPath: locationPath, toPath: documents)
-//                                                        print("new location:\(documents)")
-//                                                        let scene = try SCNScene(url: URL(fileURLWithPath: documents), options: nil)
-//                                                        let nodess = scene.rootNode.childNodes[0]
-//                                                        self.sceneView.scene.rootNode.addChildNode(nodess)
+            
+            
+//            let portalScene2 = SCNScene(named:"art.scnassets/ship.scn")
 //
-//                                                        } as! (URL?, URLResponse?, Error?) -> Void)
-//            downloadTask.resume()
-            
-            
-            let portalScene2 = SCNScene(named:"art.scnassets/ship.scn")
-
-            let portalNode2 = portalScene2?.rootNode.childNode(withName: "ship", recursively: false)
-
-            var traduccion = matrix_identity_float4x4
-            portalNode2?.simdTransform = matrix_multiply(dondeLoPuso!, traduccion)
-            portalNode2?.eulerAngles = SCNVector3(0, Double.pi/2, 0)
-
-            portalNode2?.position.y = (portalNode2?.position.y)! - 0.5
-
-            self.sceneView.scene.rootNode.addChildNode(portalNode2!)
+//            let portalNode2 = portalScene2?.rootNode.childNode(withName: "ship", recursively: false)
+//
+//            var traduccion = matrix_identity_float4x4
+//            node?.simdTransform = matrix_multiply(dondeLoPuso!, traduccion)
+//            node?.eulerAngles = SCNVector3(0, Double.pi/2, 0)
+//
+//            node?.position.y = (portalNode2?.position.y)! - 0.5
+//
+//            self.sceneView.scene.rootNode.addChildNode(portalNode2!)
             
             hasTresde = true
         } else {
-            self.sceneView.scene.rootNode.childNode(withName: "ship", recursively: false)?.removeFromParentNode()
+            self.sceneView.scene.rootNode.childNode(withName: nombreTresDe, recursively: false)?.removeFromParentNode()
             
             hasTresde = false
         }
@@ -228,10 +227,9 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     
     @IBAction func pinchGest(_ sender: UIPinchGestureRecognizer) {
         
-        let casa = self.sceneView.scene.rootNode.childNode(withName: "ship", recursively: false)
+        let casa = self.sceneView.scene.rootNode.childNode(withName: nombreTresDe, recursively: false)
         
         let escala = sender.scale
-        print(escala)
         
         casa?.scale.x *= Float(escala)
         casa?.scale.y *= Float(escala)
@@ -239,11 +237,9 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     }
     
     @IBAction func rotateGest(_ sender: UIRotationGestureRecognizer) {
-        print("rotar")
-        let casa = self.sceneView.scene.rootNode.childNode(withName: "ship", recursively: false)
+        let casa = self.sceneView.scene.rootNode.childNode(withName: nombreTresDe, recursively: false)
         
         let escala = sender.rotation
-        print(escala)
         
         casa?.eulerAngles.y += Float(escala)
     }

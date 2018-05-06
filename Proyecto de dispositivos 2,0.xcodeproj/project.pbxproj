@@ -13,7 +13,6 @@
 		39BD80402075494C001BF154 /* TableViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BD803F2075494C001BF154 /* TableViewController3.swift */; };
 		9C661BC4206C44AA000BD374 /* TableViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661BC3206C44AA000BD374 /* TableViewController1.swift */; };
 		9C661BC6206C4520000BD374 /* TableViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661BC5206C4520000BD374 /* TableViewController2.swift */; };
-		F23A38CB209CE38F007C8100 /* iMacAK.scn in Resources */ = {isa = PBXBuildFile; fileRef = F23A38CA209CE38F007C8100 /* iMacAK.scn */; };
 		F24E79AF2098D8230067003D /* TutorialARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E79AE2098D8230067003D /* TutorialARViewController.swift */; };
 		F24E79B1209915160067003D /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E79B0209915160067003D /* MapaViewController.swift */; };
 		F2513CEF208D91020091BDC8 /* ViewControllerML.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2513CEE208D91020091BDC8 /* ViewControllerML.swift */; };
@@ -27,7 +26,6 @@
 		F2B6DF06206AF97F00D3E8E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF05206AF97F00D3E8E8 /* Assets.xcassets */; };
 		F2B6DF09206AF97F00D3E8E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF07206AF97F00D3E8E8 /* LaunchScreen.storyboard */; };
 		F2B6DF11206B078C00D3E8E8 /* cedetec.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF10206B078B00D3E8E8 /* cedetec.jpg */; };
-		F2B6DF33206B1ABB00D3E8E8 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF32206B1ABA00D3E8E8 /* art.scnassets */; };
 		F2B6DF35206B1AF000D3E8E8 /* ViewControllerAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6DF34206B1AF000D3E8E8 /* ViewControllerAR.swift */; };
 		F2B6DF37206B28ED00D3E8E8 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6DF36206B28ED00D3E8E8 /* ViewController2.swift */; };
 		F2B6DF57206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF56206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg */; };
@@ -41,7 +39,6 @@
 		39BD803F2075494C001BF154 /* TableViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController3.swift; sourceTree = "<group>"; };
 		9C661BC3206C44AA000BD374 /* TableViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController1.swift; sourceTree = "<group>"; };
 		9C661BC5206C4520000BD374 /* TableViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController2.swift; sourceTree = "<group>"; };
-		F23A38CA209CE38F007C8100 /* iMacAK.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = iMacAK.scn; sourceTree = "<group>"; };
 		F24E79AE2098D8230067003D /* TutorialARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialARViewController.swift; sourceTree = "<group>"; };
 		F24E79B0209915160067003D /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		F2513CEE208D91020091BDC8 /* ViewControllerML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerML.swift; sourceTree = "<group>"; };
@@ -57,7 +54,6 @@
 		F2B6DF08206AF97F00D3E8E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2B6DF0A206AF97F00D3E8E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2B6DF10206B078B00D3E8E8 /* cedetec.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cedetec.jpg; path = Images/cedetec.jpg; sourceTree = "<group>"; };
-		F2B6DF32206B1ABA00D3E8E8 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		F2B6DF34206B1AF000D3E8E8 /* ViewControllerAR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerAR.swift; sourceTree = "<group>"; };
 		F2B6DF36206B28ED00D3E8E8 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		F2B6DF56206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "tec-de-monterrey-becas-para-mexicanos.jpg"; path = "Images/tec-de-monterrey-becas-para-mexicanos.jpg"; sourceTree = "<group>"; };
@@ -94,14 +90,12 @@
 		F2B6DEFD206AF97F00D3E8E8 /* Proyecto de dispositivos 2,0 */ = {
 			isa = PBXGroup;
 			children = (
-				F23A38CA209CE38F007C8100 /* iMacAK.scn */,
 				F2513CF0208D958A0091BDC8 /* Resnet50.mlmodel */,
 				394A8C282087D11D006C93CF /* video-481821_960_720.png */,
 				394A8C262087D090006C93CF /* 3d.png */,
 				394A8C242087CE87006C93CF /* gifRickAndMortyPortal.gif */,
 				F29A5A38206C8EEA002B0981 /* escenes.sncassets */,
 				F2B6DF56206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg */,
-				F2B6DF32206B1ABA00D3E8E8 /* art.scnassets */,
 				F2B6DF10206B078B00D3E8E8 /* cedetec.jpg */,
 				F2B6DEFE206AF97F00D3E8E8 /* AppDelegate.swift */,
 				F2B6DF00206AF97F00D3E8E8 /* ViewController.swift */,
@@ -187,8 +181,6 @@
 				F2B6DF06206AF97F00D3E8E8 /* Assets.xcassets in Resources */,
 				F2B6DF57206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg in Resources */,
 				394A8C292087D11D006C93CF /* video-481821_960_720.png in Resources */,
-				F23A38CB209CE38F007C8100 /* iMacAK.scn in Resources */,
-				F2B6DF33206B1ABB00D3E8E8 /* art.scnassets in Resources */,
 				F29A5A39206C8EEA002B0981 /* escenes.sncassets in Resources */,
 				F2B6DF04206AF97F00D3E8E8 /* Main.storyboard in Resources */,
 				394A8C272087D090006C93CF /* 3d.png in Resources */,

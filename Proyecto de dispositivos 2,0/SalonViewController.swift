@@ -114,6 +114,7 @@ class SalonViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         let sigVista = segue.destination as! TutorialARViewController
         sigVista.ruta = foto360
         sigVista.videoadd = maquinaria[selectedRow].video
+        sigVista.tresDeRuta = maquinaria[selectedRow].tresde
         
         activityInd.stopAnimating()
     }

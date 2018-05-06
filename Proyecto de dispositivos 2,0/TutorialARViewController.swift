@@ -12,6 +12,7 @@ class TutorialARViewController: UIViewController {
     
     var ruta = ""
     var videoadd = ""
+    var tresDeRuta = ""
 
     @IBOutlet weak var activityInd: UIActivityIndicatorView!
     override func viewDidLoad() {
@@ -41,6 +42,7 @@ class TutorialARViewController: UIViewController {
         let sigVista = segue.destination as! ViewControllerAR
         sigVista.ruta = ruta
         sigVista.videoadd = videoadd
+        sigVista.tresDeRuta = tresDeRuta
         
         activityInd.stopAnimating()
     }
