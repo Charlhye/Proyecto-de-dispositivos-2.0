@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		394A8C252087CE87006C93CF /* gifRickAndMortyPortal.gif in Resources */ = {isa = PBXBuildFile; fileRef = 394A8C242087CE87006C93CF /* gifRickAndMortyPortal.gif */; };
-		394A8C272087D090006C93CF /* 3d.png in Resources */ = {isa = PBXBuildFile; fileRef = 394A8C262087D090006C93CF /* 3d.png */; };
-		394A8C292087D11D006C93CF /* video-481821_960_720.png in Resources */ = {isa = PBXBuildFile; fileRef = 394A8C282087D11D006C93CF /* video-481821_960_720.png */; };
 		39BD80402075494C001BF154 /* TableViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BD803F2075494C001BF154 /* TableViewController3.swift */; };
 		9C661BC4206C44AA000BD374 /* TableViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661BC3206C44AA000BD374 /* TableViewController1.swift */; };
 		9C661BC6206C4520000BD374 /* TableViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661BC5206C4520000BD374 /* TableViewController2.swift */; };
@@ -18,23 +15,25 @@
 		F2513CEF208D91020091BDC8 /* ViewControllerML.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2513CEE208D91020091BDC8 /* ViewControllerML.swift */; };
 		F2513CF1208D958A0091BDC8 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F2513CF0208D958A0091BDC8 /* Resnet50.mlmodel */; };
 		F2588EA8206D972B0077D8E5 /* SalonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2588EA7206D972B0077D8E5 /* SalonViewController.swift */; };
+		F2609629209FD9790027F321 /* cedetec.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2609622209FD9770027F321 /* cedetec.jpg */; };
+		F260962A209FD9790027F321 /* 3d.png in Resources */ = {isa = PBXBuildFile; fileRef = F2609623209FD9770027F321 /* 3d.png */; };
+		F260962B209FD9790027F321 /* tec-de-monterrey-becas-para-mexicanos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2609624209FD9770027F321 /* tec-de-monterrey-becas-para-mexicanos.jpg */; };
+		F260962C209FD9790027F321 /* tuto ML.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F2609625209FD9780027F321 /* tuto ML.jpeg */; };
+		F260962D209FD9790027F321 /* gifRickAndMortyPortal.gif in Resources */ = {isa = PBXBuildFile; fileRef = F2609626209FD9780027F321 /* gifRickAndMortyPortal.gif */; };
+		F260962E209FD9790027F321 /* tuto AR.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F2609627209FD9780027F321 /* tuto AR.jpeg */; };
+		F260962F209FD9790027F321 /* video-481821_960_720.png in Resources */ = {isa = PBXBuildFile; fileRef = F2609628209FD9790027F321 /* video-481821_960_720.png */; };
 		F2A794EC2074986F003BD01E /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A794EB2074986F003BD01E /* Usuario.swift */; };
 		F2B6DEFF206AF97F00D3E8E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6DEFE206AF97F00D3E8E8 /* AppDelegate.swift */; };
 		F2B6DF01206AF97F00D3E8E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6DF00206AF97F00D3E8E8 /* ViewController.swift */; };
 		F2B6DF04206AF97F00D3E8E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF02206AF97F00D3E8E8 /* Main.storyboard */; };
 		F2B6DF06206AF97F00D3E8E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF05206AF97F00D3E8E8 /* Assets.xcassets */; };
 		F2B6DF09206AF97F00D3E8E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF07206AF97F00D3E8E8 /* LaunchScreen.storyboard */; };
-		F2B6DF11206B078C00D3E8E8 /* cedetec.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF10206B078B00D3E8E8 /* cedetec.jpg */; };
 		F2B6DF35206B1AF000D3E8E8 /* ViewControllerAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6DF34206B1AF000D3E8E8 /* ViewControllerAR.swift */; };
 		F2B6DF37206B28ED00D3E8E8 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B6DF36206B28ED00D3E8E8 /* ViewController2.swift */; };
-		F2B6DF57206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B6DF56206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg */; };
 		F2F0D081207351AD00E687DC /* ProyectosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0D080207351AD00E687DC /* ProyectosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		394A8C242087CE87006C93CF /* gifRickAndMortyPortal.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifRickAndMortyPortal.gif; sourceTree = "<group>"; };
-		394A8C262087D090006C93CF /* 3d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3d.png; sourceTree = "<group>"; };
-		394A8C282087D11D006C93CF /* video-481821_960_720.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-481821_960_720.png"; sourceTree = "<group>"; };
 		39BD803F2075494C001BF154 /* TableViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController3.swift; sourceTree = "<group>"; };
 		9C661BC3206C44AA000BD374 /* TableViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController1.swift; sourceTree = "<group>"; };
 		9C661BC5206C4520000BD374 /* TableViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController2.swift; sourceTree = "<group>"; };
@@ -43,6 +42,13 @@
 		F2513CEE208D91020091BDC8 /* ViewControllerML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerML.swift; sourceTree = "<group>"; };
 		F2513CF0208D958A0091BDC8 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		F2588EA7206D972B0077D8E5 /* SalonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonViewController.swift; sourceTree = "<group>"; };
+		F2609622209FD9770027F321 /* cedetec.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cedetec.jpg; path = Images/cedetec.jpg; sourceTree = "<group>"; };
+		F2609623209FD9770027F321 /* 3d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3d.png; path = Images/3d.png; sourceTree = "<group>"; };
+		F2609624209FD9770027F321 /* tec-de-monterrey-becas-para-mexicanos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "tec-de-monterrey-becas-para-mexicanos.jpg"; path = "Images/tec-de-monterrey-becas-para-mexicanos.jpg"; sourceTree = "<group>"; };
+		F2609625209FD9780027F321 /* tuto ML.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "tuto ML.jpeg"; path = "Images/tuto ML.jpeg"; sourceTree = "<group>"; };
+		F2609626209FD9780027F321 /* gifRickAndMortyPortal.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = gifRickAndMortyPortal.gif; path = Images/gifRickAndMortyPortal.gif; sourceTree = "<group>"; };
+		F2609627209FD9780027F321 /* tuto AR.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "tuto AR.jpeg"; path = "Images/tuto AR.jpeg"; sourceTree = "<group>"; };
+		F2609628209FD9790027F321 /* video-481821_960_720.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "video-481821_960_720.png"; path = "Images/video-481821_960_720.png"; sourceTree = "<group>"; };
 		F2A794EB2074986F003BD01E /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		F2B6DEFB206AF97F00D3E8E8 /* Proyecto de dispositivos 2,0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Proyecto de dispositivos 2,0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B6DEFE206AF97F00D3E8E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,10 +57,8 @@
 		F2B6DF05206AF97F00D3E8E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2B6DF08206AF97F00D3E8E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2B6DF0A206AF97F00D3E8E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F2B6DF10206B078B00D3E8E8 /* cedetec.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cedetec.jpg; path = Images/cedetec.jpg; sourceTree = "<group>"; };
 		F2B6DF34206B1AF000D3E8E8 /* ViewControllerAR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerAR.swift; sourceTree = "<group>"; };
 		F2B6DF36206B28ED00D3E8E8 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
-		F2B6DF56206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "tec-de-monterrey-becas-para-mexicanos.jpg"; path = "Images/tec-de-monterrey-becas-para-mexicanos.jpg"; sourceTree = "<group>"; };
 		F2F0D080207351AD00E687DC /* ProyectosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProyectosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,12 +92,14 @@
 		F2B6DEFD206AF97F00D3E8E8 /* Proyecto de dispositivos 2,0 */ = {
 			isa = PBXGroup;
 			children = (
+				F2609623209FD9770027F321 /* 3d.png */,
+				F2609622209FD9770027F321 /* cedetec.jpg */,
+				F2609626209FD9780027F321 /* gifRickAndMortyPortal.gif */,
+				F2609624209FD9770027F321 /* tec-de-monterrey-becas-para-mexicanos.jpg */,
+				F2609627209FD9780027F321 /* tuto AR.jpeg */,
+				F2609625209FD9780027F321 /* tuto ML.jpeg */,
+				F2609628209FD9790027F321 /* video-481821_960_720.png */,
 				F2513CF0208D958A0091BDC8 /* Resnet50.mlmodel */,
-				394A8C282087D11D006C93CF /* video-481821_960_720.png */,
-				394A8C262087D090006C93CF /* 3d.png */,
-				394A8C242087CE87006C93CF /* gifRickAndMortyPortal.gif */,
-				F2B6DF56206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg */,
-				F2B6DF10206B078B00D3E8E8 /* cedetec.jpg */,
 				F2B6DEFE206AF97F00D3E8E8 /* AppDelegate.swift */,
 				F2B6DF00206AF97F00D3E8E8 /* ViewController.swift */,
 				F2B6DF34206B1AF000D3E8E8 /* ViewControllerAR.swift */,
@@ -174,14 +180,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F260962E209FD9790027F321 /* tuto AR.jpeg in Resources */,
+				F260962A209FD9790027F321 /* 3d.png in Resources */,
 				F2B6DF09206AF97F00D3E8E8 /* LaunchScreen.storyboard in Resources */,
+				F260962F209FD9790027F321 /* video-481821_960_720.png in Resources */,
+				F260962B209FD9790027F321 /* tec-de-monterrey-becas-para-mexicanos.jpg in Resources */,
 				F2B6DF06206AF97F00D3E8E8 /* Assets.xcassets in Resources */,
-				F2B6DF57206B700B00D3E8E8 /* tec-de-monterrey-becas-para-mexicanos.jpg in Resources */,
-				394A8C292087D11D006C93CF /* video-481821_960_720.png in Resources */,
+				F260962D209FD9790027F321 /* gifRickAndMortyPortal.gif in Resources */,
 				F2B6DF04206AF97F00D3E8E8 /* Main.storyboard in Resources */,
-				394A8C272087D090006C93CF /* 3d.png in Resources */,
-				F2B6DF11206B078C00D3E8E8 /* cedetec.jpg in Resources */,
-				394A8C252087CE87006C93CF /* gifRickAndMortyPortal.gif in Resources */,
+				F260962C209FD9790027F321 /* tuto ML.jpeg in Resources */,
+				F2609629209FD9790027F321 /* cedetec.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
