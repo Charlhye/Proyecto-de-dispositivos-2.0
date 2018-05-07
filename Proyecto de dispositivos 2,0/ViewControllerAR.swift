@@ -36,6 +36,15 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
 
     }
     
+    var dondeLoPuso: simd_float4x4?
+    
+    func dondeLoPongo(){
+        if(dondeLoPuso == nil){
+            guard let currentFrame = self.sceneView.session.currentFrame else {return}
+            self.dondeLoPuso = currentFrame.camera.transform
+        }
+    }
+    
     //cargar el portal
     @IBAction func portalHandler(_ sender: UIButton) {
         
@@ -51,8 +60,6 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
 
     }
     
-    var dondeLoPuso: simd_float4x4?
-    
     func addPortalsup(){
         if !self.hasPortal {
             
@@ -63,8 +70,7 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
             
             let portalNode = portalScene?.rootNode.childNode(withName: "Portal", recursively: false)
             
-            guard let currentFrame = self.sceneView.session.currentFrame else {return}
-            self.dondeLoPuso = currentFrame.camera.transform
+            dondeLoPongo()
             
             var traduccion = matrix_identity_float4x4
             //definir un metro alejado del dispositivo
@@ -120,10 +126,12 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     var nombreTresDe = ""
     
     func addtresde(){
-        if !hasTresde && hasPortal {
+        if !hasTresde {
             
             let urlSelectedItem = tresDeRuta
             let url = URL(string: urlSelectedItem)
+            
+            dondeLoPongo()
             
             let scene = try? SCNScene(url: url!, options: nil)
             let node = scene?.rootNode.childNodes[0]
@@ -131,9 +139,9 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
 
             var traduccion = matrix_identity_float4x4
             node?.simdTransform = matrix_multiply(dondeLoPuso!, traduccion)
-            node?.eulerAngles = SCNVector3(0, Double.pi/2, 0)
+            node?.eulerAngles = SCNVector3(-(Double.pi/2), Double.pi/2, 0)
             
-            node?.position.y = (node?.position.y)! - 0.5
+            node?.position.x = (node?.position.x)! - 0.5
             
             self.sceneView.scene.rootNode.addChildNode(node!)
             
@@ -163,7 +171,10 @@ class ViewControllerAR: UIViewController, ARSCNViewDelegate {
     }
     
     func addvideo(){
-        if !hasVid && hasPortal {
+        if !hasVid {
+            
+            dondeLoPongo()
+            
             let currentFrame = dondeLoPuso!
             print(videoadd)
             let moviePath = videoadd
